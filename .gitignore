@@ -261,3 +261,8 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Rider files and folders
+.idea/
+.DS_Store
+
