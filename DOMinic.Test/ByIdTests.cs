@@ -24,10 +24,21 @@ namespace DOMinic.Test
         [Fact]
         public async Task ItCanDoGood()
         {
+            var sut = await Template.Render("Form.cshtml", new
+            {
+                TestText = "my form title"
+            });
+            // can i get this to ignore empty attributes
+            Assert.Equal(true, (bool)sut.GetOnlyById("my-button").Attribute("disabled"));
+        }
+
+        [Fact]
+        public async Task ItCanDoAnotherGood()
+        {
             var sut = await Template.Render("Article.cshtml", new
             {
-                Title = "A cool title",
-                Author = "Hello World"
+                Title = "<div>title</div>",
+                Author = "Aaron > Arron < Aaron"
             });
             // can i get this to ignore empty attributes
             Assert.Equal(true, (bool)sut.GetOnlyById("my-button").Attribute("disabled"));
