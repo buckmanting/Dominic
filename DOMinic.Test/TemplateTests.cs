@@ -1,15 +1,16 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 using DOMinic.Test.TestModels;
 using Xunit;
 
 namespace DOMinic.Test
 {
-    public class InstantiationTests
+    public class TemplateTests
     {
-        public InstantiationTests()
+        public TemplateTests()
         {
             var currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
             var viewPath = $"{currentDirectory}/TestTemplates";
@@ -19,15 +20,7 @@ namespace DOMinic.Test
         [Fact]
         public void ItCanBeInstantiated()
         {
-            var document = new XDocument(
-                new XComment("This is a comment"),
-                new XElement("main",
-                    new XElement("nav", "my nav"),
-                    new XElement("section", "cool section"),
-                    new XElement("article", "cooler section"),
-                    new XElement("partial")
-                )
-            );
+            var document = new XmlDocument();
 
             var sut = new Template(document);
             Assert.NotNull(sut);
@@ -77,6 +70,17 @@ namespace DOMinic.Test
         public async Task ItThrowsAnErrorWhenNoTemplateIsFoundOnModelessRender()
         {
             await Assert.ThrowsAsync<ArgumentException>(async () => await Template.Render("i-do-not-exist.cshtml"));
+        }
+
+        [Fact]
+        public async Task ItCanParseWithEmptyAttributes()
+        {
+            var sut = await Template.Render("Form.cshtml", new
+            {
+                TestText = "my form title"
+            });
+
+            Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }
     }
 }
