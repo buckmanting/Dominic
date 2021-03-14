@@ -1,7 +1,7 @@
 using System.Xml;
 using System.Xml.Linq;
 
-namespace DOMinic.Getters
+namespace Dominic.Getters
 {
     public class GetLast
     {

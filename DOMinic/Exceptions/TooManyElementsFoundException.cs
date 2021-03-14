@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOMinic.Exceptions
+namespace Dominic.Exceptions
 {
     class TooManyElementsFoundException : Exception
     {

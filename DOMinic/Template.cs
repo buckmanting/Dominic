@@ -2,13 +2,13 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
-using DOMinic.Getters;
-using DOMinic.Helpers;
+using Dominic.Getters;
+using Dominic.Helpers;
 using RazorLight;
 using Sgml;
 using WhitespaceHandling = Sgml.WhitespaceHandling;
 
-namespace DOMinic
+namespace Dominic
 {
     public class Template
     {

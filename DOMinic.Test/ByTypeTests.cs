@@ -1,4 +1,4 @@
-namespace DOMinic.Test
+namespace Dominic.Test
 {
     public class ByTypeTests
     {

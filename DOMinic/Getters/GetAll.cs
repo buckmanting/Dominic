@@ -1,8 +1,8 @@
-using DOMinic.Helpers;
+using Dominic.Helpers;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace DOMinic.Getters
+namespace Dominic.Getters
 {
     public class GetAll
     {

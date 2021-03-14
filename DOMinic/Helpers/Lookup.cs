@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DOMinic.Test")]
-namespace DOMinic.Helpers
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Dominic.Test")]
+namespace Dominic.Helpers
 {
     internal class Lookup
     {
