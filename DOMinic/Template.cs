@@ -3,7 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using DOMinic.Getters;
+using DOMinic.Helpers;
 using RazorLight;
+using Sgml;
 using WhitespaceHandling = Sgml.WhitespaceHandling;
 
 namespace DOMinic
@@ -12,6 +14,7 @@ namespace DOMinic
     {
         private readonly XmlDocument _htmlDocument;
         private static string _viewFolderLocation;
+        private Lookup _lookup;
 
         public GetOnly GetOnly;
         public GetFirst GetFirst;
@@ -27,10 +30,13 @@ namespace DOMinic
 
             _htmlDocument = document;
 
-            GetOnly = new GetOnly(_htmlDocument);
+            _lookup = new Lookup();
+            _lookup.BuildLookup(_htmlDocument);
+
+            GetOnly = new GetOnly(_lookup);
             GetFirst = new GetFirst(_htmlDocument);
             GetLast = new GetLast(_htmlDocument);
-            GetAll = new GetAll(_htmlDocument);
+            GetAll = new GetAll(_lookup);
         }
 
         // /// <summary>
@@ -154,13 +160,11 @@ namespace DOMinic
         private static XmlDocument FromHtml(TextReader reader)
         {
             // setup SgmlReader
-            var sgmlReader = new Sgml.SgmlReader
-            {
-                DocType = "HTML",
-                WhitespaceHandling = WhitespaceHandling.All,
-                CaseFolding = Sgml.CaseFolding.ToLower,
-                InputStream = reader
-            };
+            var sgmlReader = new SgmlReader();
+            sgmlReader.DocType = "HTML";
+            sgmlReader.WhitespaceHandling = WhitespaceHandling.All;
+            sgmlReader.CaseFolding = CaseFolding.ToLower;
+            sgmlReader.InputStream = reader;
 
             // create document
             XmlDocument doc = new XmlDocument();

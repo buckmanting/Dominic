@@ -1,34 +1,35 @@
+using DOMinic.Helpers;
+using System.Collections.Generic;
 using System.Xml;
-using System.Xml.Linq;
-using DOMinic.Interfaces;
 
 namespace DOMinic.Getters
 {
-    public class GetAll : IGetter
+    public class GetAll
     {
-        private XmlDocument _document;
-        internal GetAll(XmlDocument document)
+        private Lookup _lookup;
+        internal GetAll(Lookup lookup)
         {
-            _document = document;
-        }
-        public XNode ById(string id)
-        {
-            throw new System.NotImplementedException();
+            _lookup = lookup;
         }
 
-        public XNode ByType(string type)
+        public List<XmlNode> ById(string id)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.Id, id);
         }
 
-        public XNode ByTestId(string testId)
+        public List<XmlNode> ByType(string type)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.Type, type);
         }
 
-        public XNode ByPartialName(string partialName)
+        public List<XmlNode> ByTestId(string testId)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.TestId, testId);
+        }
+
+        public List<XmlNode> ByPartialName(string partialName)
+        {
+            return _lookup.QueryLookup(LookupType.PartialName, partialName);
         }
     }
 }

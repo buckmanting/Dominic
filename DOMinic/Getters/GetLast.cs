@@ -1,10 +1,9 @@
 using System.Xml;
 using System.Xml.Linq;
-using DOMinic.Interfaces;
 
 namespace DOMinic.Getters
 {
-    public class GetLast : IGetter
+    public class GetLast
     {
         private XmlDocument _document;
         internal GetLast(XmlDocument document)

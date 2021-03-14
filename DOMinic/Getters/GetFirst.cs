@@ -1,10 +1,9 @@
 using System.Xml;
 using System.Xml.Linq;
-using DOMinic.Interfaces;
 
 namespace DOMinic.Getters
 {
-    public class GetFirst : IGetter
+    public class GetFirst
     {
         private XmlDocument _document;
         internal GetFirst(XmlDocument document)

@@ -1,35 +1,63 @@
+using DOMinic.Exceptions;
+using DOMinic.Helpers;
 using System.Xml;
-using System.Xml.Linq;
-using DOMinic.Interfaces;
 
 namespace DOMinic.Getters
 {
-    public class GetOnly : IGetter
+    public class GetOnly
     {
-        private XmlDocument _document;
-        internal GetOnly(XmlDocument document)
+        private Lookup _lookup;
+        internal GetOnly(Lookup lookup)
         {
-            _document = document;
-        }
-        
-        public XNode ById(string id)
-        {
-            throw new System.NotImplementedException();
+            _lookup = lookup;
         }
 
-        public XNode ByType(string type)
+        public XmlNode ById(string id)
         {
-            throw new System.NotImplementedException();
+            var elements = _lookup.QueryLookup(LookupType.Id, id);
+
+            if(elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching id \"{id}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
         }
 
-        public XNode ByTestId(string testId)
+        public XmlNode ByType(string type)
         {
-            throw new System.NotImplementedException();
+            var elements = _lookup.QueryLookup(LookupType.Type, type);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching type \"{type}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
         }
 
-        public XNode ByPartialName(string partialName)
+        public XmlNode ByTestId(string testId)
         {
-            throw new System.NotImplementedException();
+            var elements = _lookup.QueryLookup(LookupType.TestId, testId);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching testId \"{testId}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
+        }
+
+        public XmlNode ByPartialName(string partialName)
+        {
+            var elements = _lookup.QueryLookup(LookupType.PartialName, partialName);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching partialName \"{partialName}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
         }
     }
 }
