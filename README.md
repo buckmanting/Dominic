@@ -1,4 +1,4 @@
-# DOMinic
+# Dominic
 A library for UI testing cshtml
 
 ## Status
