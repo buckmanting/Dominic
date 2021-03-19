@@ -1,16 +1,15 @@
 using System.Xml;
 using System.Xml.Linq;
 
-namespace DOMinic.Getters
+namespace Dominic.Getters
 {
-    public class GetLast
+    public class GetFirst
     {
         private XmlDocument _document;
-        internal GetLast(XmlDocument document)
+        internal GetFirst(XmlDocument document)
         {
             _document = document;
         }
-        
         public XNode ById(string id)
         {
             throw new System.NotImplementedException();

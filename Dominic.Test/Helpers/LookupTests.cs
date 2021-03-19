@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using Xunit;
 
-namespace DOMinic.Test.Helpers
+namespace Dominic.Test.Helpers
 {
     public class LookupTests
     {
@@ -31,7 +31,7 @@ namespace DOMinic.Test.Helpers
             doc.XmlResolver = null;
             doc.Load(sgmlReader);
 
-            var sut = new DOMinic.Helpers.Lookup();
+            var sut = new Dominic.Helpers.Lookup();
             sut.BuildLookup(doc);
         }
 
@@ -55,7 +55,7 @@ namespace DOMinic.Test.Helpers
             doc.XmlResolver = null;
             doc.Load(sgmlReader);
 
-            var sut = new DOMinic.Helpers.Lookup();
+            var sut = new Dominic.Helpers.Lookup();
             sut.BuildLookup(doc);
         }
     }

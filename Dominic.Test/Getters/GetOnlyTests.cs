@@ -1,10 +1,10 @@
-using DOMinic.Exceptions;
+using Dominic.Exceptions;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DOMinic.Test
+namespace Dominic.Test
 {
     public class GetOnlyTests
     {

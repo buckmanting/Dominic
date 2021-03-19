@@ -3,10 +3,10 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using DOMinic.Test.TestModels;
+using Dominic.Test.TestModels;
 using Xunit;
 
-namespace DOMinic.Test
+namespace Dominic.Test
 {
     public class TemplateTests
     {

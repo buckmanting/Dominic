@@ -1,8 +1,8 @@
-using DOMinic.Exceptions;
-using DOMinic.Helpers;
+using Dominic.Exceptions;
+using Dominic.Helpers;
 using System.Xml;
 
-namespace DOMinic.Getters
+namespace Dominic.Getters
 {
     public class GetOnly
     {

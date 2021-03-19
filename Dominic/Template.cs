@@ -2,13 +2,13 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
-using DOMinic.Getters;
-using DOMinic.Helpers;
+using Dominic.Getters;
+using Dominic.Helpers;
 using RazorLight;
 using Sgml;
 using WhitespaceHandling = Sgml.WhitespaceHandling;
 
-namespace DOMinic
+namespace Dominic
 {
     public class Template
     {
@@ -38,68 +38,6 @@ namespace DOMinic
             GetLast = new GetLast(_htmlDocument);
             GetAll = new GetAll(_lookup);
         }
-
-        // /// <summary>
-        // /// 
-        // /// </summary>
-        // /// <param name="id">id of the element to be returned</param>
-        // /// <exception cref="InvalidOperationException">thrown where more than one matching element is found</exception>
-        // /// <returns>element matching with an id matching the provided parameter</returns>
-        // public XElement GetOnlyById(string id)
-        // {
-        //     return _document
-        //         .Elements()
-        //         .SingleOrDefault(el => (string) el.Attribute("id") == id);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public XElement GetOnlyByTestId(string testId)
-        // {
-        //     // if nothing is found do we throw to break early and control the error, or return null and be unclear in test report?
-        //     return _document
-        //         .Elements()
-        //         .SingleOrDefault(el => (string) el.Attribute("data-testId") == testId);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public IEnumerable<XElement> GetAllByTestId(string testId)
-        // {
-        //     return _document?
-        //         .Elements()
-        //         .Where(el => (string) el.Attribute("data-testId") == testId);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public XElement GetOnlyByType(string type)
-        // {
-        //     // if nothing is found do we throw to break early and control the error, or return null and be unclear in test report?
-        //     return _document.Elements()
-        //         .SingleOrDefault(el => el.Name == type);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public IEnumerable<XElement> GetAllByType(string type)
-        // {
-        //     return _document?
-        //         .Elements()
-        //         .Where(el => el.Name == type);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public XElement GetOnlyByPartialName(string partialName)
-        // {
-        //     // if nothing is found do we throw to break early and control the error, or return null and be unclear in test report?
-        //     return _document.Elements()
-        //         .SingleOrDefault(el => el.Name == "partial" && (string) el.Attribute("name") == partialName);
-        // }
-        //
-        // // todo AB (05/03/20): test this dumb code
-        // public IEnumerable<XElement> GetAllByPartialName(string partialName)
-        // {
-        //     return _document?
-        //         .Elements()
-        //         .Where(el => el.Name == "partial" && (string) el.Attribute("name") == partialName);
-        // }
 
         public static async Task<Template> Render<T>(string path, T model)
         {

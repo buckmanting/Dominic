@@ -3,7 +3,7 @@
 //using System.Threading.Tasks;
 //using Xunit;
 
-//namespace DOMinic.Test
+//namespace Dominic.Test
 //{
 //    public class ByIdTests
 //    {

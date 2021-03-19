@@ -1,4 +1,4 @@
-namespace DOMinic.Test.TestModels
+namespace Dominic.Test.TestModels
 {
     public class TestModel
     {

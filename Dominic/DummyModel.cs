@@ -1,4 +1,4 @@
-namespace DOMinic
+namespace Dominic
 {
     public class DummyModel
     {
