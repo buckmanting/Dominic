@@ -32,7 +32,7 @@ Edit the `csproj` of the project containing your tests, and inside the `<ItemGro
 ```
 
 ## Configuring your project
-Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in the `cspoj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
+Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in the `csproj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
 
 ```
 <PropertyGroup>
