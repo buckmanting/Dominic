@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic", "Dominic\Dominic.csproj", "{4689C118-F251-46D5-89AB-CCE5DEA716D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic.Test", "Dominic.Test\Dominic.Test.csproj", "{2918275C-D2EE-4901-A190-7F95FABABD2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4689C118-F251-46D5-89AB-CCE5DEA716D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4689C118-F251-46D5-89AB-CCE5DEA716D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4689C118-F251-46D5-89AB-CCE5DEA716D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4689C118-F251-46D5-89AB-CCE5DEA716D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C457CCED-AF85-4024-8AEE-3394ACAABCC3}
+	EndGlobalSection
+EndGlobal
