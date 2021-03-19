@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DOMinic\Dominic.csproj" />
+      <ProjectReference Include="..\Dominic\Dominic.csproj" />
     </ItemGroup>
 
 </Project>
