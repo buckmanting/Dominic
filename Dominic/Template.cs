@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using Dominic.Getters;
-using Dominic.Helpers;
+using Dominic.Enums;
 using RazorLight;
 using Sgml;
 using WhitespaceHandling = Sgml.WhitespaceHandling;
@@ -12,14 +12,12 @@ namespace Dominic
 {
     public class Template
     {
-        private readonly XmlDocument _htmlDocument;
         private static string _viewFolderLocation;
-        private Lookup _lookup;
 
-        public GetOnly GetOnly;
-        public GetFirst GetFirst;
-        public GetLast GetLast;
-        public GetAll GetAll;
+        public readonly GetOnly GetOnly;
+        public readonly GetFirst GetFirst;
+        public readonly GetLast GetLast;
+        public readonly GetAll GetAll;
 
         public Template(XmlDocument document)
         {
@@ -28,15 +26,13 @@ namespace Dominic
                 throw new ArgumentException("the document cannot be null");
             }
 
-            _htmlDocument = document;
+            var lookup = new Lookup();
+            lookup.BuildLookup(document);
 
-            _lookup = new Lookup();
-            _lookup.BuildLookup(_htmlDocument);
-
-            GetOnly = new GetOnly(_lookup);
-            GetFirst = new GetFirst(_htmlDocument);
-            GetLast = new GetLast(_htmlDocument);
-            GetAll = new GetAll(_lookup);
+            GetOnly = new GetOnly(lookup);
+            GetFirst = new GetFirst(lookup);
+            GetLast = new GetLast(lookup);
+            GetAll = new GetAll(lookup);
         }
 
         public static async Task<Template> Render<T>(string path, T model)
@@ -98,16 +94,16 @@ namespace Dominic
         private static XmlDocument FromHtml(TextReader reader)
         {
             // setup SgmlReader
-            var sgmlReader = new SgmlReader();
-            sgmlReader.DocType = "HTML";
-            sgmlReader.WhitespaceHandling = WhitespaceHandling.All;
-            sgmlReader.CaseFolding = CaseFolding.ToLower;
-            sgmlReader.InputStream = reader;
+            var sgmlReader = new SgmlReader
+            {
+                DocType = "HTML",
+                WhitespaceHandling = WhitespaceHandling.All,
+                CaseFolding = CaseFolding.ToLower,
+                InputStream = reader
+            };
 
             // create document
-            XmlDocument doc = new XmlDocument();
-            doc.PreserveWhitespace = true;
-            doc.XmlResolver = null;
+            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null!};
             doc.Load(sgmlReader);
             return doc;
         }

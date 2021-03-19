@@ -1,34 +1,36 @@
+using System.Linq;
 using System.Xml;
-using System.Xml.Linq;
+using Dominic.Enums;
 
 namespace Dominic.Getters
 {
     public class GetLast
     {
-        private XmlDocument _document;
-        internal GetLast(XmlDocument document)
+        private Lookup _lookup;
+
+        internal GetLast(Lookup lookup)
         {
-            _document = document;
-        }
-        
-        public XNode ById(string id)
-        {
-            throw new System.NotImplementedException();
+            _lookup = lookup;
         }
 
-        public XNode ByType(string type)
+        public XmlNode ById(string id)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.Id, id).LastOrDefault();
         }
 
-        public XNode ByTestId(string testId)
+        public XmlNode ByType(string type)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.Type, type).LastOrDefault();
         }
 
-        public XNode ByPartialName(string partialName)
+        public XmlNode ByTestId(string testId)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.TestId, testId).LastOrDefault();
+        }
+
+        public XmlNode ByPartialName(string partialName)
+        {
+            return _lookup.QueryLookup(LookupType.PartialName, partialName).LastOrDefault();
         }
     }
 }
