@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic", "DOMinic\Dominic.csproj", "{4689C118-F251-46D5-89AB-CCE5DEA716D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic", "Dominic\Dominic.csproj", "{4689C118-F251-46D5-89AB-CCE5DEA716D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic.Test", "DOMinic.Test\Dominic.Test.csproj", "{2918275C-D2EE-4901-A190-7F95FABABD2A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{9B025199-A2FA-4AB3-A754-DDB43E10F958}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic.Test", "Dominic.Test\Dominic.Test.csproj", "{2918275C-D2EE-4901-A190-7F95FABABD2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
