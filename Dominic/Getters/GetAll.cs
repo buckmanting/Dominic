@@ -1,4 +1,4 @@
-using Dominic.Helpers;
+using Dominic.Enums;
 using System.Collections.Generic;
 using System.Xml;
 

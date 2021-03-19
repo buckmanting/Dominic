@@ -1,5 +1,5 @@
 using Dominic.Exceptions;
-using Dominic.Helpers;
+using Dominic.Enums;
 using System.Xml;
 
 namespace Dominic.Getters
