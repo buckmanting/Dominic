@@ -31,5 +31,6 @@ jobs:
       run: dotnet pack
     - name: Publish NuGet
       uses: brandedoutcast/publish-nuget@v2.5.5
-      PROJECT_FILE_PATH: Dominic/Dominic.csproj
-      NUGET_KEY: ${{ secrets.NUGET_ALPHA_API_KEY }}
+      with:
+        PROJECT_FILE_PATH: Dominic/Dominic.csproj
+        NUGET_KEY: ${{ secrets.NUGET_ALPHA_API_KEY }}
