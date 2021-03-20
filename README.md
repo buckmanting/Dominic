@@ -84,8 +84,8 @@ Contributions are what make the open source community such an amazing place to b
 1. Push to the Branch `git push origin feature/cool-feature`
 1. Open a Pull Request
 
-## Licence
-Distributed under the MIT License. See `LICENSE` for more information.
+## License
+Distributed under the MIT License. See [`LICENSE`](LICENSE.md) for more information.
 
 ## Acknowledgements
 TODO: add details here
