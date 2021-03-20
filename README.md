@@ -40,7 +40,7 @@ Dominic should be installed in the project coutaining your tests. You can instal
 ### .NET CLI
 `dotnet add package Dominic`
 ### PackageReference
-Edit the `csproj` of the project containing your tests, and inside the `<ItemGroup>` add the reference to Dominic. See below for an example.
+Edit your `csproj` of the project containing your tests, and inside the `<ItemGroup>` add the reference to Dominic. See below for an example.
 
 ```
 <ItemGroup>
@@ -49,7 +49,7 @@ Edit the `csproj` of the project containing your tests, and inside the `<ItemGro
 ```
 
 ## Configuring your project
-Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in the `csproj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
+Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in your `csproj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
 
 ```
 <PropertyGroup>
@@ -57,7 +57,7 @@ Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your 
     <PreserveCompilationContext>true</PreserveCompilationContext>
     ...
 </PropertyGroup>
-  ```
+```
 
 ## Features
 TODO: add details here
@@ -75,12 +75,12 @@ TODO: add details here
 TODO: add details here
 
 ## How to Contribute
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read out [contiubuting guideline](CONTRIBUTING.md). The basic steps are as follows:
 
-1. Fork the Project
-2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
-4. Push to the Branch (git push origin feature/AmazingFeature)
+1. Clone the Project `git clone git@github.com:springerBuck/Dominic.git`
+2. Create your Feature or Bug Branch `git checkout -b feature/cool-feature` or `git checkout -b bug/pesky-bug`
+3. Commit your Changes `git commit -m 'Adds some cool feature'`. Please see the [Springer Nature Frontend Playbook](https://github.com/springernature/frontend-playbook/blob/main/git/git.md#commit-messages) for the expected commit message style.
+4. Push to the Branch `git push origin feature/cool-feature`
 5. Open a Pull Request
 
 ## Licence
