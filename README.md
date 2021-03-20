@@ -75,7 +75,7 @@ TODO: add details here
 TODO: add details here
 
 ## How to Contribute
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read out [contiubuting guideline](CONTRIBUTING.md). The basic steps are as follows:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read our [contiubution guidelines](CONTRIBUTING.md). The basic steps are as follows:
 
 1. Clone the Project `git clone git@github.com:springerBuck/Dominic.git`
 2. Create your Feature or Bug Branch `git checkout -b feature/cool-feature` or `git checkout -b bug/pesky-bug`
