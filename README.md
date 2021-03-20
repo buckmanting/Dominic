@@ -1,6 +1,6 @@
-<section align="center">
+<p align="center">
   <a href="https://github.com/springerBuck/Dominic">
-    <img src="images/logo.png" alt="Dominic Logo" width="250" height="250">
+    <img src="images/logo-cropped.png" alt="Dominic Logo">
   </a>
 
   <h1 align="center">Dominic</h1>
@@ -15,7 +15,7 @@
     ·
     <a href="https://github.com/springerBuck/Dominic/issues">Request Feature</a>
   </p>
-</setcion>
+</p>
 
 [![Build and Test](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml)
 
