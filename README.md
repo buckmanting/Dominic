@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/springerBuck/Dominic">
-    <img src="images/logo.png" alt="Dominic Logo">
+    <img src="images/logo.png" alt="Dominic Logo" height="200" width="200">
   </a>
 
   <h1 align="center">Dominic</h1>
@@ -8,12 +8,12 @@
   <p align="center">
     A library for UI testing cshtml 🧪
     <br />
-    <a href="https://github.com/springerBuck/Dominic"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/springerBuck/Dominic"><strong>Explore the docs 📚 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/springerBuck/Dominic/issues">Report Bug</a>
+    <a href="https://github.com/springerBuck/Dominic/issues">Report Bug 🐛</a>
     ·
-    <a href="https://github.com/springerBuck/Dominic/issues">Request Feature</a>
+    <a href="https://github.com/springerBuck/Dominic/issues">Request Feature ✨</a>
   </p>
 </p>
 
@@ -77,11 +77,12 @@ TODO: add details here
 ## How to Contribute
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read our [contiubution guidelines](CONTRIBUTING.md). The basic steps are as follows:
 
+1. Open and issue for a Feature ✨ or Bug 🐛
 1. Clone the Project `git clone git@github.com:springerBuck/Dominic.git`
-2. Create your Feature or Bug Branch `git checkout -b feature/cool-feature` or `git checkout -b bug/pesky-bug`
-3. Commit your Changes `git commit -m 'Adds some cool feature'`. Please see the [Springer Nature Frontend Playbook](https://github.com/springernature/frontend-playbook/blob/main/git/git.md#commit-messages) for the expected commit message style.
-4. Push to the Branch `git push origin feature/cool-feature`
-5. Open a Pull Request
+1. Create your Feature or Bug Branch `git checkout -b feature/cool-feature` or `git checkout -b bug/pesky-bug`
+1. Commit your Changes `git commit -m 'Adds some cool feature'`. Please see the [Springer Nature Frontend Playbook](https://github.com/springernature/frontend-playbook/blob/main/git/git.md#commit-messages) for the expected commit message style.
+1. Push to the Branch `git push origin feature/cool-feature`
+1. Open a Pull Request
 
 ## Licence
 Distributed under the MIT License. See `LICENSE` for more information.
