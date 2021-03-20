@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/springerBuck/Dominic">
-    <img src="images/logo-cropped.png" alt="Dominic Logo">
+    <img src="images/logo.png" alt="Dominic Logo">
   </a>
 
   <h1 align="center">Dominic</h1>
 
   <p align="center">
-    A library for UI testing cshtml.
+    A library for UI testing cshtml 🧪
     <br />
     <a href="https://github.com/springerBuck/Dominic"><strong>Explore the docs »</strong></a>
     <br />
