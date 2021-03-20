@@ -1,16 +1,12 @@
-# Dominic 
-A library for UI testing cshtml.
-
-<br />
-<p align="center">
+<section align="center">
   <a href="https://github.com/springerBuck/Dominic">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Dominic Logo" width="250" height="250">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h1 align="center">Dominic</h1>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A library for UI testing cshtml.
     <br />
     <a href="https://github.com/springerBuck/Dominic"><strong>Explore the docs »</strong></a>
     <br />
@@ -19,7 +15,7 @@ A library for UI testing cshtml.
     ·
     <a href="https://github.com/springerBuck/Dominic/issues">Request Feature</a>
   </p>
-</p>
+</setcion>
 
 [![Build and Test](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml)
 
