@@ -1,5 +1,26 @@
 # Dominic 
 A library for UI testing cshtml.
+
+<br />
+<p align="center">
+  <a href="https://github.com/springerBuck/Dominic">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/springerBuck/Dominic"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/springerBuck/Dominic/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/springerBuck/Dominic/issues">Request Feature</a>
+  </p>
+</p>
+
 [![Build and Test](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/springerBuck/Dominic/actions/workflows/build-and-test.yml)
 
 ## Table of Contents
@@ -58,7 +79,16 @@ TODO: add details here
 TODO: add details here
 
 ## How to Contribute
-TODO: add details here
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+## Licence
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgements
 TODO: add details here
