@@ -14,6 +14,8 @@
     <a href="https://github.com/springerBuck/Dominic/issues">Report Bug 🐛</a>
     ·
     <a href="https://github.com/springerBuck/Dominic/issues">Request Feature ✨</a>
+    ·
+    <a href="https://github.com/springerBuck/Dominic/discussions">Start a Discussion 🎙</a>
   </p>
 </p>
 
@@ -28,12 +30,13 @@
  - [API](#api)
  - [How does it work?](#how-does-it-work?)
  - [How to Contribute](#how-to-Contribute)
+ - [Versioning](#versioning)
  - [Acknowledgements](#acknowledgements)
  - [See also](#see-also)
  - [Support](#support)
 
 ## Installation
-Dominic should be installed in the project coutaining your tests. You can install it with your favourite NuGet package manager, the `dotnet` cli, `Install-Package` cli or manually adding the reference to our `csproj`.
+Dominic should be installed in the project containing your tests. You can install it with your favorite NuGet package manager, the `dotnet` cli, `Install-Package` cli or manually adding the reference to our `csproj`.
 
 ### Package Manager
 `Install-Package Dominic`
@@ -75,7 +78,7 @@ TODO: add details here
 TODO: add details here
 
 ## How to Contribute
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read our [contiubution guidelines](CONTRIBUTING.md). The basic steps are as follows:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. Before you jump into the code I would recommend you first read our [contribution guidelines](CONTRIBUTING.md). The basic steps are as follows:
 
 1. Open and issue for a Feature ✨ or Bug 🐛
 1. Clone the Project `git clone git@github.com:springerBuck/Dominic.git`
@@ -83,6 +86,9 @@ Contributions are what make the open source community such an amazing place to b
 1. Commit your Changes `git commit -m 'Adds some cool feature'`. Please see the [Springer Nature Frontend Playbook](https://github.com/springernature/frontend-playbook/blob/main/git/git.md#commit-messages) for the expected commit message style.
 1. Push to the Branch `git push origin feature/cool-feature`
 1. Open a Pull Request
+
+## Versioning
+We use Semantic Versioning (Semver) for our versioning. It is a great way to keep our versioning easy to understand. As well as this it allows developers who use Dominic to upgrade to newer versions with confidence that things won't break 🙂. There is a wonderful explanation of and reasoning for Semver over at the [Springer Nature Frontend Playbook](https://github.com/springernature/frontend-playbook/blob/main/git/semver.md).
 
 ## License
 Distributed under the MIT License. See [`LICENSE`](LICENSE.md) for more information.
