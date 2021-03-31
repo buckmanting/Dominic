@@ -103,7 +103,7 @@ namespace Dominic
             };
 
             // create document
-            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null!};
+            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null};
             doc.Load(sgmlReader);
             return doc;
         }
