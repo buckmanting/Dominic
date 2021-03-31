@@ -1,7 +1,7 @@
 # Contributing
 If you're here because you want to contribute then that is amazing 😍. Thank you for wanting to get involved with this project and helping to improve the community!
 
-## Where do I start?
+## Where do I start
 There are a couple of ways you can get started contributing to Dominic. If you've found a Bug or you would like to request or add a new feature, then you're best [opening a new issue](https://github.com/springerBuck/Dominic/issues). If you have general feedback or you have an idea you're best of [opening a new discussion](https://github.com/springerBuck/Dominic/discussions). The best way to get started is to choose one of these paths. There may be ideas that are beyond the scope of Dominic. For example, if you have this great idea to add a new feature that would convert all the text in the UI to emojis of Cats 🐈. There is certainly a use case for that somewhere, but that's not functionality Dominic would need. By opening an issue or starting a discussion you can save yourself a lot of effort.
 
 ### Opening an issue
