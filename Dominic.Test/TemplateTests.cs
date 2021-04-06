@@ -56,6 +56,7 @@ namespace Dominic.Test
                     Title = "My title",
                     Author = "Aaron Buckley"
                 }
+                
             ));
         }
 

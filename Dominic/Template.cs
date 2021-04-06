@@ -39,10 +39,10 @@ namespace Dominic
             GetAll = new GetAll(lookup);
         }
 
-        public static async Task<Template> Render<T>(string path, T model)
+        public static async Task<Template> Render<T>(string path, T model, string rootNamespace)
         {
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(T))
+                .UseEmbeddedResourcesProject(typeof(T).Assembly, rootNamespace)
                 .SetOperatingAssembly(typeof(T).Assembly)
                 .UseMemoryCachingProvider()
                 .Build();
@@ -59,10 +59,10 @@ namespace Dominic
             return new Template(FromHtml(GetTextReader(result)));
         }
 
-        public static async Task<Template> Render(string path)
+        public static async Task<Template> Render(string path, string rootNamespace)
         {
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(DummyModel))
+                .UseEmbeddedResourcesProject(typeof(DummyModel).Assembly, rootNamespace)
                 .SetOperatingAssembly(typeof(DummyModel).Assembly)
                 .Build();
             
