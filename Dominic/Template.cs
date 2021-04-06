@@ -1,10 +1,13 @@
 using System;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml;
 using Dominic.Getters;
 using Dominic.Enums;
 using RazorLight;
+using RazorLight.Internal;
 using Sgml;
 using WhitespaceHandling = Sgml.WhitespaceHandling;
 
@@ -13,6 +16,7 @@ namespace Dominic
     public class Template
     {
         private static string _viewFolderLocation;
+        private static Func<Type, object> _resolver;
 
         public readonly GetOnly GetOnly;
         public readonly GetFirst GetFirst;
@@ -43,6 +47,8 @@ namespace Dominic
                 .UseMemoryCachingProvider()
                 .Build();
 
+            SetupPreRenderCallbacks(ref engine);
+
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
                 GetViewFromFile(path),
@@ -59,6 +65,8 @@ namespace Dominic
                 .UseEmbeddedResourcesProject(typeof(DummyModel))
                 .SetOperatingAssembly(typeof(DummyModel).Assembly)
                 .Build();
+            
+            SetupPreRenderCallbacks(ref engine);
 
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
@@ -86,6 +94,11 @@ namespace Dominic
             _viewFolderLocation = path;
         }
 
+        public static void SetResolver(Func<Type, object> func)
+        {
+            _resolver = func;
+        }
+
         private static TextReader GetTextReader(string fromString)
         {
             return new StringReader(fromString);
@@ -106,6 +119,27 @@ namespace Dominic
             var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null};
             doc.Load(sgmlReader);
             return doc;
+        }
+
+        private static void SetupPreRenderCallbacks(ref RazorLightEngine engine)
+        {
+            engine.Options.PreRenderCallbacks.Add(template =>
+            {
+                var properties = template.GetType().GetRuntimeProperties()
+                    .Where(p => p.IsDefined(typeof(RazorInjectAttribute))
+                                &&
+                                p.GetIndexParameters().Length ==
+                                0 &&
+                                !p.SetMethod.IsStatic).ToArray();
+
+                foreach (var property in properties)
+                {
+                    var memberType = property.PropertyType;
+                    var instance = _resolver(memberType);
+                    
+                    property.SetValue(template, instance);
+                }
+            });
         }
     }
 }
