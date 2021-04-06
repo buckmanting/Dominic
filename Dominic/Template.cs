@@ -94,6 +94,10 @@ namespace Dominic
             _viewFolderLocation = path;
         }
 
+        /// <summary>
+        /// TODO add documentation
+        /// </summary>
+        /// <param name="func"></param>
         public static void SetResolver(Func<Type, object> func)
         {
             _resolver = func;
