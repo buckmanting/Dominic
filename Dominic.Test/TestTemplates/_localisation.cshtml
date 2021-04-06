@@ -1,0 +1,31 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localiser
+
+<form method="POST" action="/login">
+    <h1>@Localiser["Title"]</h1>
+    <fieldset>
+        <label for="username">@Localiser["UsernameLabel"]</label>
+        <div>
+            <input id="username"
+                   type="text"
+                   name="username"
+                   placeholder="@Localiser["UsernamePlaceholder"]"
+                   required>
+            <a href="/forgot-username">Forgot my username</a>
+        </div>
+
+        <label for="password">@Localiser["PasswordLabel"]</label>
+        <div>
+            <input id="password"
+                   type="password"
+                   name="password"
+                   placeholder="@Localiser["PasswordPlaceholder"]"
+                   required>
+            <a href="/forgot-password">Forgot my password</a>
+        </div>
+    </fieldset>
+    <p>
+        <button type="submit">@Localiser["LoginLabel"]</button>
+    </p>
+</form>
