@@ -41,7 +41,8 @@ namespace Dominic.Test
                 {
                     Title = "My title",
                     Author = "Aaron Buckley"
-                }
+                },
+                "Dominic.Tests.TestTemplates"
             );
             Assert.NotNull(sut);
         }
@@ -55,7 +56,8 @@ namespace Dominic.Test
                 {
                     Title = "My title",
                     Author = "Aaron Buckley"
-                }
+                },
+                "Dominic.Tests.TestTemplates"
                 
             ));
         }
@@ -63,14 +65,14 @@ namespace Dominic.Test
         [Fact]
         public async Task ItReturnsANewInstanceAfterRenderingWithoutAModel()
         {
-            var sut = await Template.Render("Navigation.cshtml");
+            var sut = await Template.Render("Navigation.cshtml", "Dominic.Tests.TestTemplates");
             Assert.NotNull(sut);
         }
 
         [Fact]
         public async Task ItThrowsAnErrorWhenNoTemplateIsFoundOnModelessRender()
         {
-            await Assert.ThrowsAsync<ArgumentException>(async () => await Template.Render("i-do-not-exist.cshtml"));
+            await Assert.ThrowsAsync<ArgumentException>(async () => await Template.Render("i-do-not-exist.cshtml", "Dominic.Tests.TestTemplates"));
         }
 
         [Fact]
@@ -79,7 +81,8 @@ namespace Dominic.Test
             var sut = await Template.Render("Form.cshtml", new
             {
                 TestText = "my form title"
-            });
+            },
+            "Dominic.Tests.TestTemplates");
 
             Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }
