@@ -45,7 +45,7 @@ Dominic should be installed in the project containing your tests. You can instal
 ### PackageReference
 Edit your `csproj` of the project containing your tests, and inside the `<ItemGroup>` add the reference to Dominic. See below for an example.
 
-```
+```XML
 <ItemGroup>
     <PackageReference Include="Dominic" Version="1.0.0" />
 </ItemGroup>
@@ -54,12 +54,21 @@ Edit your `csproj` of the project containing your tests, and inside the `<ItemGr
 ## Configuring your project
 Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in your `csproj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
 
-```
+```XML
 <PropertyGroup>
     ...
     <PreserveCompilationContext>true</PreserveCompilationContext>
     ...
 </PropertyGroup>
+```
+
+Within the project containing your view models, or any type used within you views, you must set `PreserveCompilationContext` and `PreserveCompilationReferences` to true in the `csproj`. 
+
+```XML
+    <PropertyGroup>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
+        <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    </PropertyGroup>
 ```
 
 ## Features

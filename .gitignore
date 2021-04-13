@@ -266,3 +266,4 @@ FakesAssemblies/
 .idea/
 .DS_Store
 
+.vscode/

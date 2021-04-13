@@ -39,18 +39,18 @@ namespace Dominic.Test
         {
             var sut = await Template.Render(
                 "Article.cshtml",
-                new {Title = "My title", Author = "Aaron Buckley"},
+                new Article {Title = "My title", Author = "Aaron Buckley"},
                 "Dominic.Tests.TestTemplates"
             );
             Assert.NotNull(sut);
         }
 
-        [Fact(Skip= "one issue at a time")]
+        [Fact]
         public async Task ItRendersWithATemplate()
         {
             var sut = await Template.Render(
                 "WithLayout.cshtml",
-                new {Title = "My title", Author = "Aaron Buckley"},
+                new Article {Title = "My title", Author = "Aaron Buckley"},
                 "Dominic.Test.TestTemplates"
             );
             Assert.NotNull(sut);

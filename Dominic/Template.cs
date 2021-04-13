@@ -43,8 +43,6 @@ namespace Dominic
         {
             var engine = new RazorLightEngineBuilder()
                 .UseEmbeddedResourcesProject(typeof(T).Assembly, rootNamespace)
-                .SetOperatingAssembly(typeof(T).Assembly)
-                .UseMemoryCachingProvider()
                 .Build();
 
             SetupPreRenderCallbacks(ref engine);
@@ -63,7 +61,6 @@ namespace Dominic
         {
             var engine = new RazorLightEngineBuilder()
                 .UseEmbeddedResourcesProject(typeof(DummyModel).Assembly, rootNamespace)
-                .SetOperatingAssembly(typeof(DummyModel).Assembly)
                 .Build();
             
             SetupPreRenderCallbacks(ref engine);
