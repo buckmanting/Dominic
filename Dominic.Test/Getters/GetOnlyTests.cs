@@ -1,9 +1,7 @@
-using Dominic.Exceptions;
-
-using System;
 using System.IO;
 using System.Threading.Tasks;
 
+using Dominic.Exceptions;
 using Xunit;
 
 namespace Dominic.Test
@@ -128,7 +126,7 @@ namespace Dominic.Test
         // [Fact]
         // public async Task ItCanWithComplexClasses()
         // {
-        //     var sut = await Template.Render("ComplexClasses.cshtml", new {TestText = "Hello World"});
+        //     var sut = await Template.Render("ComplexClasses.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
         //     var expectedClasses = new[]
         //     {
         //         "cool-class-a",

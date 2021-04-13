@@ -17,7 +17,7 @@
 //        [Fact]
 //        public async Task ItCanGetById()
 //        {
-//            var sut = await Template.Render("MultipleUniqueIds.cshtml", new {TestText = "Hello World"});
+//            var sut = await Template.Render("MultipleUniqueIds.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
 //            Assert.Equal("My Div One, Hello World", sut.GetOnly.ById("div-1").text);
 //        }
 
@@ -47,7 +47,7 @@
 //        // [Fact]
 //        // public async Task ItCanWithComplexClasses()
 //        // {
-//        //     var sut = await Template.Render("ComplexClasses.cshtml", new {TestText = "Hello World"});
+//        //     var sut = await Template.Render("ComplexClasses.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
 //        //     var expectedClasses = new[]
 //        //     {
 //        //         "cool-class-a",
@@ -60,7 +60,7 @@
 //        [Fact]
 //        public async Task ItThrowsAnErrorWhenMoreThanOneElementFound()
 //        {
-//            var sut = await Template.Render("MultipleDuplicateIds.cshtml", new {TestText = "Hello World"});
+//            var sut = await Template.Render("MultipleDuplicateIds.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
 //            Assert.Throws<InvalidOperationException>(() =>
 //                sut.GetOnlyById("div-1")); // should this be a more explicit error?
 //        }
@@ -68,7 +68,7 @@
 //        [Fact]
 //        public async Task ItReturnsNullWhenNoElementFound()
 //        {
-//            var sut = await Template.Render("MultipleUniqueIds.cshtml", new {TestText = "Hello World"});
+//            var sut = await Template.Render("MultipleUniqueIds.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
 //            Assert.Null(sut.GetOnlyById("not-a-real-id"));
 //        }
 //    }
