@@ -72,7 +72,11 @@ Within the project containing your view models, or any type used within you view
 ```
 
 ## Features
-TODO: add details here
+### Rendering templates
+
+### Querying rendered templates
+
+### Configuring the template renderer
 
 ## Philosophy
 TODO: add details here
