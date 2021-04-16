@@ -63,8 +63,8 @@ namespace Dominic
         /// 
         /// </summary>
         /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
-        /// <param name="model"></param>
-        /// <typeparam name="T"></typeparam>
+        /// <param name="model">View Model of the view you wish to test</param>
+        /// <typeparam name="T">Type of the View Model</typeparam>
         /// <returns></returns>
         public static async Task<Template> Render<T>(string path, T model)
         {

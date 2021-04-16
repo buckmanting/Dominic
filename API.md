@@ -23,10 +23,6 @@
   - [ByPartialName(partialName)](#M-Dominic-Getters-GetOnly-ByPartialName-System-String- 'Dominic.Getters.GetOnly.ByPartialName(System.String)')
   - [ByTestId(testId)](#M-Dominic-Getters-GetOnly-ByTestId-System-String- 'Dominic.Getters.GetOnly.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetOnly-ByType-System-String- 'Dominic.Getters.GetOnly.ByType(System.String)')
-- [Lookup](#T-Dominic-Enums-Lookup 'Dominic.Enums.Lookup')
-  - [#ctor()](#M-Dominic-Enums-Lookup-#ctor 'Dominic.Enums.Lookup.#ctor')
-  - [BuildLookup(document)](#M-Dominic-Enums-Lookup-BuildLookup-System-Xml-XmlDocument- 'Dominic.Enums.Lookup.BuildLookup(System.Xml.XmlDocument)')
-  - [QueryLookup(lookupType,lookupValue)](#M-Dominic-Enums-Lookup-QueryLookup-Dominic-Enums-LookupType,System-String- 'Dominic.Enums.Lookup.QueryLookup(Dominic.Enums.LookupType,System.String)')
 - [Template](#T-Dominic-Template 'Dominic.Template')
   - [#ctor(document)](#M-Dominic-Template-#ctor-System-Xml-XmlDocument- 'Dominic.Template.#ctor(System.Xml.XmlDocument)')
   - [GetAll](#F-Dominic-Template-GetAll 'Dominic.Template.GetAll')
@@ -363,55 +359,6 @@ Dominic.Getters
 | ---- | ----------- |
 | [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
 
-<a name='T-Dominic-Enums-Lookup'></a>
-## Lookup `type`
-
-##### Namespace
-
-Dominic.Enums
-
-<a name='M-Dominic-Enums-Lookup-#ctor'></a>
-### #ctor() `constructor`
-
-##### Summary
-
-
-
-##### Parameters
-
-This constructor has no parameters.
-
-<a name='M-Dominic-Enums-Lookup-BuildLookup-System-Xml-XmlDocument-'></a>
-### BuildLookup(document) `method`
-
-##### Summary
-
-
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| document | [System.Xml.XmlDocument](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.XmlDocument 'System.Xml.XmlDocument') |  |
-
-<a name='M-Dominic-Enums-Lookup-QueryLookup-Dominic-Enums-LookupType,System-String-'></a>
-### QueryLookup(lookupType,lookupValue) `method`
-
-##### Summary
-
-
-
-##### Returns
-
-
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| lookupType | [Dominic.Enums.LookupType](#T-Dominic-Enums-LookupType 'Dominic.Enums.LookupType') |  |
-| lookupValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
 <a name='T-Dominic-Template'></a>
 ## Template `type`
 
@@ -499,13 +446,13 @@ Dominic
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Path of the view you wish to test, relative to the path configured with [SetViewLocation](#M-Dominic-Template-SetViewLocation-System-String- 'Dominic.Template.SetViewLocation(System.String)') |
-| model | [\`\`0](#T-``0 '``0') |  |
+| model | [\`\`0](#T-``0 '``0') | View Model of the view you wish to test |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| T |  |
+| T | Type of the View Model |
 
 <a name='M-Dominic-Template-SetResolver-System-Func{System-Type,System-Object}-'></a>
 ### SetResolver(func) `method`
