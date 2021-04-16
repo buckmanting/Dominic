@@ -5,7 +5,6 @@
 
 - [GetAll](#T-Dominic-Getters-GetAll 'Dominic.Getters.GetAll')
   - [ById(id)](#M-Dominic-Getters-GetAll-ById-System-String- 'Dominic.Getters.GetAll.ById(System.String)')
-  - [ByPartialName(partialName)](#M-Dominic-Getters-GetAll-ByPartialName-System-String- 'Dominic.Getters.GetAll.ByPartialName(System.String)')
   - [ByTestId(testId)](#M-Dominic-Getters-GetAll-ByTestId-System-String- 'Dominic.Getters.GetAll.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetAll-ByType-System-String- 'Dominic.Getters.GetAll.ByType(System.String)')
 - [GetFirst](#T-Dominic-Getters-GetFirst 'Dominic.Getters.GetFirst')
@@ -46,68 +45,141 @@ Dominic.Getters
 
 ##### Summary
 
-
+Used to find all matching node in the rendered template where the node's `id` matches the provided parameter value.
 
 ##### Returns
 
-
+A list of nodes in the template that have the supplied `id`
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | `Id` of the desired nodes |
 
-<a name='M-Dominic-Getters-GetAll-ByPartialName-System-String-'></a>
-### ByPartialName(partialName) `method`
+##### Example
 
-##### Summary
+Sample template
 
+```
+<div>
+  <p id="example-id">
+                     My cool paragraph 😎
+                 </p>
+  <p>
+                     Don't try and find me!
+                 </p>
+  <div id="example-id">
+                     My other cool paragraph 😎
+                 </div>
+</div>
+```
 
+```
+var nodes = myRenderedArticle.GetAll.ById("example-id");
+```
 
-##### Returns
+Returns
 
-
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+```
+<p id="example-id">
+                 My cool paragraph 😎
+             </p>
+```
 
 <a name='M-Dominic-Getters-GetAll-ByTestId-System-String-'></a>
 ### ByTestId(testId) `method`
 
 ##### Summary
 
-
+Used to find all matching node in the rendered template where the node's `data-testId` attribute matches the provided parameter value.
 
 ##### Returns
 
-
+A list of nodes in the template that have the supplied `id`
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| testId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| testId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | `data-testId` attribute value of the desired nodes |
+
+##### Example
+
+Sample template
+
+```
+<div>
+  <p data-testId="example-testId">
+                     My cool paragraph 😎
+                 </p>
+  <p data-testId="some-other-testId">
+                     Try and find me!
+                 </p>
+  <div data-testId="example-testId">
+                     My other cool paragraph 😎
+                 </div>
+</div>
+```
+
+```
+var nodes = myRenderedArticle.GetAll.ByTestId("example-testId");
+```
+
+Returns
+
+```
+<p data-testId="example-testId">
+                 My cool paragraph 😎
+             </p>
+```
 
 <a name='M-Dominic-Getters-GetAll-ByType-System-String-'></a>
 ### ByType(type) `method`
 
 ##### Summary
 
-
+Used to find all matching node in the rendered template where the node's `type` matches the provided parameter value.
 
 ##### Returns
 
-
+A list of nodes in the template that have the supplied `id`
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | `type` of the desired nodes, for example `div`, `main`, `p` |
+
+##### Example
+
+Sample template
+
+```
+<div>
+  <p>
+                     My cool paragraph 😎
+                 </p>
+  <p>
+                     Try and find me!
+                 </p>
+  <div>
+                     My other cool paragraph 😎
+                 </div>
+</div>
+```
+
+```
+var nodes = myRenderedArticle.GetAll.ByType("p");
+```
+
+Returns
+
+```
+<p>
+                 My cool paragraph 😎
+             </p>
+```
 
 <a name='T-Dominic-Getters-GetFirst'></a>
 ## GetFirst `type`
@@ -370,28 +442,28 @@ Dominic
 
 ##### Summary
 
-
+[GetAll](#T-Dominic-Getters-GetAll 'Dominic.Getters.GetAll')
 
 <a name='F-Dominic-Template-GetFirst'></a>
 ### GetFirst `constants`
 
 ##### Summary
 
-
+[GetFirst](#T-Dominic-Getters-GetFirst 'Dominic.Getters.GetFirst')
 
 <a name='F-Dominic-Template-GetLast'></a>
 ### GetLast `constants`
 
 ##### Summary
 
-
+[GetLast](#T-Dominic-Getters-GetLast 'Dominic.Getters.GetLast')
 
 <a name='F-Dominic-Template-GetOnly'></a>
 ### GetOnly `constants`
 
 ##### Summary
 
-
+[GetOnly](#T-Dominic-Getters-GetOnly 'Dominic.Getters.GetOnly')
 
 <a name='M-Dominic-Template-Render-System-String-'></a>
 ### Render(path) `method`
