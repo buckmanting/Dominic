@@ -81,7 +81,7 @@ TODO: add details here
 TODO: add details here
 
 ## API
-TODO: add details here
+See the [API Documentation](API.md)
 
 ## How does it work?
 TODO: add details here
