@@ -19,31 +19,26 @@ namespace Dominic
         private static Func<Type, object> _resolver;
 
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetOnly">See GetOnly</see>
         /// </summary>
         public readonly GetOnly GetOnly;
-        
+
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetFirst">See GetFirst</see>
         /// </summary>
         public readonly GetFirst GetFirst;
-        
+
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetLast">See GetLast</see>
         /// </summary>
         public readonly GetLast GetLast;
-        
+
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetAll">See GetAll</see>
         /// </summary>
         public readonly GetAll GetAll;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="document"></param>
-        /// <exception cref="ArgumentException"></exception>
-        public Template(XmlDocument document)
+        internal Template(XmlDocument document)
         {
             if (document == null)
             {
@@ -62,13 +57,21 @@ namespace Dominic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="model"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <example>
+        /// <code>
+        /// Template myRenderedArticle = await Template.Render(
+        ///     "MyArticle.cshtml",
+        ///     new Article {Title = "My title", Author = "Aaron Buckley"}
+        /// );
+        /// </code>
+        ///</example>
+        /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
+        /// <param name="model">View Model of the view you wish to test</param>
+        /// <typeparam name="T">Type of the View Model</typeparam>
+        /// <returns>A new instance of a rendered template, which can be queried.</returns>
         public static async Task<Template> Render<T>(string path, T model)
         {
-        //todo add null/empty check on _viewFolderLocation
+            //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
@@ -88,11 +91,16 @@ namespace Dominic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
+        /// <example>
+        /// <code>
+        /// Template myRenderedArticle = await Template.Render("MySimpleTemplate.cshtml");
+        /// </code>
+        ///</example>
+        /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
+        /// <returns>A new instance of a rendered template, which can be queried.</returns>
         public static async Task<Template> Render(string path)
         {
-        //todo add null/empty check on _viewFolderLocation
+            //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
@@ -123,7 +131,7 @@ namespace Dominic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">Root path of the views</param>
         public static void SetViewLocation(string path)
         {
             _viewFolderLocation = path;
