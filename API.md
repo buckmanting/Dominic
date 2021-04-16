@@ -498,7 +498,7 @@ Dominic
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Path of the view you wish to test, relative to the path configured with [SetViewLocation](#M-Dominic-Template-SetViewLocation-System-String- 'Dominic.Template.SetViewLocation(System.String)') |
 | model | [\`\`0](#T-``0 '``0') |  |
 
 ##### Generic Types

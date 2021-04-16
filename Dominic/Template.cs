@@ -62,13 +62,13 @@ namespace Dominic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
         /// <param name="model"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public static async Task<Template> Render<T>(string path, T model)
         {
-        //todo add null/empty check on _viewFolderLocation
+            //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
@@ -92,7 +92,7 @@ namespace Dominic
         /// <returns></returns>
         public static async Task<Template> Render(string path)
         {
-        //todo add null/empty check on _viewFolderLocation
+            //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
