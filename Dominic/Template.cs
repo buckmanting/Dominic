@@ -19,22 +19,22 @@ namespace Dominic
         private static Func<Type, object> _resolver;
 
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetOnly">See GetOnly</see>
         /// </summary>
         public readonly GetOnly GetOnly;
 
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetFirst">See GetFirst</see>
         /// </summary>
         public readonly GetFirst GetFirst;
 
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetLast">See GetLast</see>
         /// </summary>
         public readonly GetLast GetLast;
 
         /// <summary>
-        /// 
+        /// <see cref="Dominic.Getters.GetAll">See GetAll</see>
         /// </summary>
         public readonly GetAll GetAll;
 
