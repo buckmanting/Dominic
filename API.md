@@ -176,9 +176,7 @@ var nodes = myRenderedArticle.GetAll.ByTestId("example-testId");
 Returns
 
 ```
-<p data-testId="example-testId">
-                 My cool paragraph 😎
-             </p>
+<p data-testId="example-testId">My cool paragraph 😎</p>
 ```
 
 <a name='M-Dominic-Getters-GetAll-ByType-System-String-'></a>
@@ -225,9 +223,7 @@ var nodes = myRenderedArticle.GetAll.ByType("p");
 Returns
 
 ```
-<p>
-                 My cool paragraph 😎
-             </p>
+<p>My cool paragraph 😎</p>
 ```
 
 <a name='T-Dominic-Getters-GetFirst'></a>

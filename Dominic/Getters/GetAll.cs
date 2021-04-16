@@ -71,12 +71,8 @@ namespace Dominic.Getters
         /// </code>
         /// Returns
         /// <code>
-        /// <p>
-        ///     My cool paragraph 😎
-        /// </p>
-        /// <p>
-        ///     Try and find me!
-        /// </p>
+        /// <p>My cool paragraph 😎</p>
+        /// <p>Try and find me!</p>
         /// </code>
         ///</example>
         /// <param name="type"><c>type</c> of the desired nodes, for example <c>div</c>, <c>main</c>, <c>p</c></param>
@@ -110,12 +106,8 @@ namespace Dominic.Getters
         /// </code>
         /// Returns
         /// <code>
-        /// <p data-testId="example-testId">
-        ///     My cool paragraph 😎
-        /// </p>
-        /// <div data-testId="example-testId">
-        ///     My other cool paragraph 😎
-        /// </div>
+        /// <p data-testId="example-testId">My cool paragraph 😎</p>
+        /// <div data-testId="example-testId">My other cool paragraph 😎</div>
         /// </code>
         ///</example>
         /// <param name="testId"><c>data-testId</c> attribute value of the desired nodes</param>

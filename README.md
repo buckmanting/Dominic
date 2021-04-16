@@ -78,10 +78,40 @@ TODO: add details here
 TODO: add details here
 
 ## Quickstart
-TODO: add details here
+### Example Template
+MultipleDuplicateIds.cshtml
+```html
+<main>
+    <div data-testId="my-test-id" class="cool-class-a">My Div One, @Model.TestText</div>
+    <div data-testId="my-test-id" class="cool-class-b">My Div Two, @Model.TestText</div>
+    <div data-testId="my-test-id" class="cool-class-c">My Div Three, @Model.TestText</div>
+    <div data-testId="my-test-id" class="cool-class-d">My Div Four, @Model.TestText</div>
+</main>
+```
+
+### Example Code
+```cs
+// test setup, here we configure the location of the views with Template.SetViewLocation()
+public MyTests()
+{
+  var currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory());
+  var viewPath = $"{currentDirectory}/TestTemplates";
+  Template.SetViewLocation(viewPath);
+}
+
+[Fact]
+public async Task ByTestId_ItCanGet()
+{
+  var sut = await Template.Render("MultipleDuplicateIds.cshtml", new {TestText = "Hello World"});
+  Assert.Equal(4, sut.GetAll.ByTestId("my-test-id").Count);
+}
+```
+
 
 ## API
-See the [API Documentation](API.md)
+There are four `Getter`s to get elements from the rendered template; `GetOnly`, `GetFirst`, `GetLast` and `GetAll`. Each of these can query the rendered template with the following methods `ById`, `ByType`, `ByTestId` and`ByPartialName`. 
+
+See the [API Documentation](API.md) for further information.
 
 ## How does it work?
 TODO: add details here
