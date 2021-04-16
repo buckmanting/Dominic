@@ -5,6 +5,7 @@
 
 - [GetAll](#T-Dominic-Getters-GetAll 'Dominic.Getters.GetAll')
   - [ById(id)](#M-Dominic-Getters-GetAll-ById-System-String- 'Dominic.Getters.GetAll.ById(System.String)')
+  - [ByPartialName(partialName)](#M-Dominic-Getters-GetAll-ByPartialName-System-String- 'Dominic.Getters.GetAll.ByPartialName(System.String)')
   - [ByTestId(testId)](#M-Dominic-Getters-GetAll-ByTestId-System-String- 'Dominic.Getters.GetAll.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetAll-ByType-System-String- 'Dominic.Getters.GetAll.ByType(System.String)')
 - [GetFirst](#T-Dominic-Getters-GetFirst 'Dominic.Getters.GetFirst')
@@ -64,16 +65,18 @@ Sample template
 ```
 <div>
   <p id="example-id">
-                     My cool paragraph 😎
-                 </p>
+             My cool paragraph 😎
+             </p>
   <p>
-                     Don't try and find me!
-                 </p>
+             Don't try and find me!
+             </p>
   <div id="example-id">
-                     My other cool paragraph 😎
-                 </div>
+             My other cool paragraph 😎
+             </div>
 </div>
 ```
+
+Your code
 
 ```
 var nodes = myRenderedArticle.GetAll.ById("example-id");
@@ -85,6 +88,54 @@ Returns
 <p id="example-id">
                  My cool paragraph 😎
              </p>
+```
+
+<a name='M-Dominic-Getters-GetAll-ByPartialName-System-String-'></a>
+### ByPartialName(partialName) `method`
+
+##### Summary
+
+Used to find all matching node in the rendered template where the `partial`'s `name` matches the provided parameter value.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Example
+
+Sample template
+
+```
+<div>
+  <p data-testId="example-testId">
+             My cool paragraph 😎
+             </p>
+  <p data-testId="some-other-testId">
+             Try and find me!
+             </p>
+  <div data-testId="example-testId">
+    <partial name="_examplePartialName" />
+  </div>
+  <partial name="_examplePartialName" />
+</div>
+```
+
+Your code
+
+```
+var nodes = myRenderedArticle.GetAll.ByPartialName("_examplePartialName");
+```
+
+Returns
+
+```
+<partial name="_examplePartialName" />
 ```
 
 <a name='M-Dominic-Getters-GetAll-ByTestId-System-String-'></a>
@@ -111,16 +162,18 @@ Sample template
 ```
 <div>
   <p data-testId="example-testId">
-                     My cool paragraph 😎
-                 </p>
+             My cool paragraph 😎
+             </p>
   <p data-testId="some-other-testId">
-                     Try and find me!
-                 </p>
+             Try and find me!
+             </p>
   <div data-testId="example-testId">
-                     My other cool paragraph 😎
-                 </div>
+             My other cool paragraph 😎
+             </div>
 </div>
 ```
+
+Your code
 
 ```
 var nodes = myRenderedArticle.GetAll.ByTestId("example-testId");
@@ -158,16 +211,18 @@ Sample template
 ```
 <div>
   <p>
-                     My cool paragraph 😎
-                 </p>
+             My cool paragraph 😎
+             </p>
   <p>
-                     Try and find me!
-                 </p>
+             Try and find me!
+             </p>
   <div>
-                     My other cool paragraph 😎
-                 </div>
+             My other cool paragraph 😎
+             </div>
 </div>
 ```
+
+Your code
 
 ```
 var nodes = myRenderedArticle.GetAll.ByType("p");

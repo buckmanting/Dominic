@@ -19,17 +19,18 @@ namespace Dominic.Getters
         /// Sample template
         /// <code>
         /// <div>
-        ///     <p id="example-id">
-        ///         My cool paragraph 😎
-        ///     </p>
-        ///     <p>
-        ///         Don't try and find me!
-        ///     </p>
-        ///     <div id="example-id">
-        ///         My other cool paragraph 😎
-        ///     </div>
+        /// <p id="example-id">
+        /// My cool paragraph 😎
+        /// </p>
+        /// <p>
+        /// Don't try and find me!
+        /// </p>
+        /// <div id="example-id">
+        /// My other cool paragraph 😎
+        /// </div>
         /// </div>
         /// </code>
+        /// Your code
         /// <code>
         /// var nodes = myRenderedArticle.GetAll.ById("example-id");
         /// </code>
@@ -39,7 +40,7 @@ namespace Dominic.Getters
         ///     My cool paragraph 😎
         /// </p>
         /// <div id="example-id">
-        ///     My other cool paragraph 😎
+        /// My other cool paragraph 😎
         /// </div>
         /// </code>
         ///</example>
@@ -57,17 +58,18 @@ namespace Dominic.Getters
         /// Sample template
         /// <code>
         /// <div>
-        ///     <p>
-        ///         My cool paragraph 😎
-        ///     </p>
-        ///     <p>
-        ///         Try and find me!
-        ///     </p>
-        ///     <div>
-        ///         My other cool paragraph 😎
-        ///     </div>
+        /// <p>
+        /// My cool paragraph 😎
+        /// </p>
+        /// <p>
+        /// Try and find me!
+        /// </p>
+        /// <div>
+        /// My other cool paragraph 😎
+        /// </div>
         /// </div>
         /// </code>
+        /// Your code
         /// <code>
         /// var nodes = myRenderedArticle.GetAll.ByType("p");
         /// </code>
@@ -95,17 +97,18 @@ namespace Dominic.Getters
         /// Sample template
         /// <code>
         /// <div>
-        ///     <p data-testId="example-testId">
-        ///         My cool paragraph 😎
-        ///     </p>
-        ///     <p data-testId="some-other-testId">
-        ///         Try and find me!
-        ///     </p>
-        ///     <div data-testId="example-testId">
-        ///         My other cool paragraph 😎
-        ///     </div>
+        /// <p data-testId="example-testId">
+        /// My cool paragraph 😎
+        /// </p>
+        /// <p data-testId="some-other-testId">
+        /// Try and find me!
+        /// </p>
+        /// <div data-testId="example-testId">
+        /// My other cool paragraph 😎
+        /// </div>
         /// </div>
         /// </code>
+        /// Your code
         /// <code>
         /// var nodes = myRenderedArticle.GetAll.ByTestId("example-testId");
         /// </code>
@@ -133,25 +136,26 @@ namespace Dominic.Getters
         /// Sample template
         /// <code>
         /// <div>
-        ///     <p data-testId="example-testId">
-        ///         My cool paragraph 😎
-        ///     </p>
-        ///     <p data-testId="some-other-testId">
-        ///         Try and find me!
-        ///     </p>
-        ///     <div data-testId="example-testId">
-        ///         <partial name="_examplePartialName">
-        ///     </div>
-        ///         <partial name="_examplePartialName">
+        /// <p data-testId="example-testId">
+        /// My cool paragraph 😎
+        /// </p>
+        /// <p data-testId="some-other-testId">
+        /// Try and find me!
+        /// </p>
+        /// <div data-testId="example-testId">
+        /// <partial name="_examplePartialName"/>
+        /// </div>
+        /// <partial name="_examplePartialName"/>
         /// </div>
         /// </code>
+        /// Your code
         /// <code>
         /// var nodes = myRenderedArticle.GetAll.ByPartialName("_examplePartialName");
         /// </code>
         /// Returns
         /// <code>
-        /// <partial name="_examplePartialName">
-        /// <partial name="_examplePartialName">
+        /// <partial name="_examplePartialName"/>
+        /// <partial name="_examplePartialName"/>
         /// </code>
         ///</example>
         /// <param name="partialName"></param>
