@@ -42,7 +42,7 @@ namespace Dominic
         public static async Task<Template> Render<T>(string path, T model, string rootNamespace)
         {
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(T).Assembly, rootNamespace)
+                .UseFileSystemProject(_viewFolderLocation)
                 .Build();
 
             SetupPreRenderCallbacks(ref engine);
@@ -60,9 +60,9 @@ namespace Dominic
         public static async Task<Template> Render(string path, string rootNamespace)
         {
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(DummyModel).Assembly, rootNamespace)
+                .UseFileSystemProject(_viewFolderLocation)
                 .Build();
-            
+
             SetupPreRenderCallbacks(ref engine);
 
             var result = await engine.CompileRenderStringAsync(
@@ -117,7 +117,7 @@ namespace Dominic
             };
 
             // create document
-            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null};
+            var doc = new XmlDocument { PreserveWhitespace = true, XmlResolver = null };
             doc.Load(sgmlReader);
             return doc;
         }
@@ -137,7 +137,7 @@ namespace Dominic
                 {
                     var memberType = property.PropertyType;
                     var instance = _resolver(memberType);
-                    
+
                     property.SetValue(template, instance);
                 }
             });
