@@ -38,12 +38,7 @@ namespace Dominic
         /// </summary>
         public readonly GetAll GetAll;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="document"></param>
-        /// <exception cref="ArgumentException"></exception>
-        public Template(XmlDocument document)
+        internal Template(XmlDocument document)
         {
             if (document == null)
             {
@@ -123,7 +118,7 @@ namespace Dominic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">Root path of the views</param>
         public static void SetViewLocation(string path)
         {
             _viewFolderLocation = path;

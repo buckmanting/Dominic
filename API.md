@@ -24,7 +24,6 @@
   - [ByTestId(testId)](#M-Dominic-Getters-GetOnly-ByTestId-System-String- 'Dominic.Getters.GetOnly.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetOnly-ByType-System-String- 'Dominic.Getters.GetOnly.ByType(System.String)')
 - [Template](#T-Dominic-Template 'Dominic.Template')
-  - [#ctor(document)](#M-Dominic-Template-#ctor-System-Xml-XmlDocument- 'Dominic.Template.#ctor(System.Xml.XmlDocument)')
   - [GetAll](#F-Dominic-Template-GetAll 'Dominic.Template.GetAll')
   - [GetFirst](#F-Dominic-Template-GetFirst 'Dominic.Template.GetFirst')
   - [GetLast](#F-Dominic-Template-GetLast 'Dominic.Template.GetLast')
@@ -366,25 +365,6 @@ Dominic.Getters
 
 Dominic
 
-<a name='M-Dominic-Template-#ctor-System-Xml-XmlDocument-'></a>
-### #ctor(document) `constructor`
-
-##### Summary
-
-
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| document | [System.Xml.XmlDocument](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.XmlDocument 'System.Xml.XmlDocument') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') |  |
-
 <a name='F-Dominic-Template-GetAll'></a>
 ### GetAll `constants`
 
@@ -478,7 +458,7 @@ TODO add documentation
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Root path of the views |
 
 <a name='T-Dominic-Exceptions-TooManyElementsFoundException'></a>
 ## TooManyElementsFoundException `type`
