@@ -136,15 +136,9 @@ namespace Dominic.Getters
         /// Sample template
         /// <code>
         /// <div>
-        /// <p data-testId="example-testId">
-        /// My cool paragraph 😎
-        /// </p>
-        /// <p data-testId="some-other-testId">
-        /// Try and find me!
-        /// </p>
-        /// <div data-testId="example-testId">
-        /// <partial name="_examplePartialName"/>
-        /// </div>
+        /// <p data-testId="example-testId">My cool paragraph 😎</p>
+        /// <p data-testId="some-other-testId">Try and find me!</p>
+        /// <div data-testId="example-testId"><partial name="_examplePartialName"/></div>
         /// <partial name="_examplePartialName"/>
         /// </div>
         /// </code>
