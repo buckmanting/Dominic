@@ -1,17 +1,13 @@
-using Dominic.Exceptions;
-
-using System;
 using System.IO;
 using System.Threading.Tasks;
+using Dominic.Exceptions;
+using Microsoft.AspNetCore.Mvc.Localization;
+using Moq;
 
 using Xunit;
 
 namespace Dominic.Test
 {
-    using Microsoft.AspNetCore.Mvc.Localization;
-
-    using Moq;
-
     public class GetAllTests
     {
         public GetAllTests()

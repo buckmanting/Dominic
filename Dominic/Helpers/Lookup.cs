@@ -11,12 +11,21 @@ namespace Dominic.Enums
         // Looking up by, Looking for, CacheID(s) to find 
         private readonly Dictionary<(LookupType, string), List<XmlNode>> _lookupTable;
 
-        public Lookup()
+        /// <summary>
+        /// 
+        /// </summary>
+        internal Lookup()
         {
             _lookupTable = new Dictionary<(LookupType, string), List<XmlNode>>();
         }
 
-        public List<XmlNode> QueryLookup(LookupType lookupType, string lookupValue)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lookupType"></param>
+        /// <param name="lookupValue"></param>
+        /// <returns></returns>
+        internal List<XmlNode> QueryLookup(LookupType lookupType, string lookupValue)
         {
             // throw if not built
             if (_lookupTable.ContainsKey((lookupType, lookupValue)))
@@ -29,7 +38,11 @@ namespace Dominic.Enums
             }
         }
 
-        public void BuildLookup(XmlDocument document)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="document"></param>
+        internal void BuildLookup(XmlDocument document)
         {
             WalkDOM(document.ChildNodes);
             // mark as built

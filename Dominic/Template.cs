@@ -18,11 +18,31 @@ namespace Dominic
         private static string _viewFolderLocation;
         private static Func<Type, object> _resolver;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetOnly GetOnly;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetFirst GetFirst;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetLast GetLast;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetAll GetAll;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="document"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Template(XmlDocument document)
         {
             if (document == null)
@@ -39,12 +59,18 @@ namespace Dominic
             GetAll = new GetAll(lookup);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="model"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static async Task<Template> Render<T>(string path, T model)
         {
+        //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(T))
-                .SetOperatingAssembly(typeof(T).Assembly)
-                .UseMemoryCachingProvider()
+                .UseFileSystemProject(_viewFolderLocation)
                 .Build();
 
             SetupPreRenderCallbacks(ref engine);
@@ -59,13 +85,18 @@ namespace Dominic
             return new Template(FromHtml(GetTextReader(result)));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static async Task<Template> Render(string path)
         {
+        //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(DummyModel))
-                .SetOperatingAssembly(typeof(DummyModel).Assembly)
+                .UseFileSystemProject(_viewFolderLocation)
                 .Build();
-            
+
             SetupPreRenderCallbacks(ref engine);
 
             var result = await engine.CompileRenderStringAsync(
@@ -89,6 +120,10 @@ namespace Dominic
             return File.ReadAllText(fullPath);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
         public static void SetViewLocation(string path)
         {
             _viewFolderLocation = path;
@@ -120,7 +155,7 @@ namespace Dominic
             };
 
             // create document
-            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null};
+            var doc = new XmlDocument { PreserveWhitespace = true, XmlResolver = null };
             doc.Load(sgmlReader);
             return doc;
         }
@@ -140,7 +175,7 @@ namespace Dominic
                 {
                     var memberType = property.PropertyType;
                     var instance = _resolver(memberType);
-                    
+
                     property.SetValue(template, instance);
                 }
             });

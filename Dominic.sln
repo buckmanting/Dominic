@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic", "Dominic\Dominic.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominic.Test", "Dominic.Test\Dominic.Test.csproj", "{2918275C-D2EE-4901-A190-7F95FABABD2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominic.Test.Models", "Dominic.Test.Models\Dominic.Test.Models.csproj", "{B60A6549-656B-444E-B71C-FC4ED4989E8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2918275C-D2EE-4901-A190-7F95FABABD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B60A6549-656B-444E-B71C-FC4ED4989E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60A6549-656B-444E-B71C-FC4ED4989E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60A6549-656B-444E-B71C-FC4ED4989E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60A6549-656B-444E-B71C-FC4ED4989E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

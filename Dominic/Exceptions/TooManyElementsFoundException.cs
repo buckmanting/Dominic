@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dominic.Exceptions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class TooManyElementsFoundException : Exception
     {
         public TooManyElementsFoundException()

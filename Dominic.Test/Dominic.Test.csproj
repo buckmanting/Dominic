@@ -5,6 +5,7 @@
 
         <IsPackable>false</IsPackable>
         <PreserveCompilationContext>true</PreserveCompilationContext>
+        <PreserveCompilationReferences>true</PreserveCompilationReferences>
         <AssemblyName>Dominic.Test</AssemblyName>
         <RootNamespace>Dominic.Test</RootNamespace>
 
@@ -26,6 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Dominic.Test.Models\Dominic.Test.Models.csproj" />
         <ProjectReference Include="..\Dominic\Dominic.csproj" />
     </ItemGroup>
 

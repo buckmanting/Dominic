@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Dominic</PackageId>
-        <PackageVersion>0.0.3</PackageVersion>
+        <PackageVersion>0.0.4</PackageVersion>
         <Title>Dominic</Title>
         <Authors>Aaron Buckley</Authors>
         <Description>A UI testing library</Description>
@@ -16,16 +16,22 @@
         <FileVersion>1.0.0.0</FileVersion>
         <PackageTags>Testing, Razor, UI testing</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <Version>1.0.0-alpha2</Version>
+        <Version>0.0.4</Version>
         <AssemblyName>Dominic</AssemblyName>
         <RootNamespace>Dominic</RootNamespace>
 
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
+        <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    </PropertyGroup>
+
     <ItemGroup>
-        <PackageReference Include="RazorLight" Version="2.0.0-rc.3" />
-        <PackageReference Include="SgmlReader.NetStandard" Version="1.8.14.1" />
+        <PackageReference Include="RazorLight" Version="2.0.0-rc.3"/>
+        <PackageReference Include="SgmlReader.NetStandard" Version="1.8.14.1"/>
     </ItemGroup>
     <ItemGroup>
         <None Include="..\LICENSE">
