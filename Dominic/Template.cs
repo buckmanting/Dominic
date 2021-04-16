@@ -18,11 +18,31 @@ namespace Dominic
         private static string _viewFolderLocation;
         private static Func<Type, object> _resolver;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetOnly GetOnly;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetFirst GetFirst;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetLast GetLast;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public readonly GetAll GetAll;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="document"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Template(XmlDocument document)
         {
             if (document == null)
@@ -39,8 +59,16 @@ namespace Dominic
             GetAll = new GetAll(lookup);
         }
 
-        public static async Task<Template> Render<T>(string path, T model, string rootNamespace)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="model"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<Template> Render<T>(string path, T model)
         {
+        //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
@@ -57,8 +85,14 @@ namespace Dominic
             return new Template(FromHtml(GetTextReader(result)));
         }
 
-        public static async Task<Template> Render(string path, string rootNamespace)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static async Task<Template> Render(string path)
         {
+        //todo add null/empty check on _viewFolderLocation
             var engine = new RazorLightEngineBuilder()
                 .UseFileSystemProject(_viewFolderLocation)
                 .Build();
@@ -86,6 +120,10 @@ namespace Dominic
             return File.ReadAllText(fullPath);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
         public static void SetViewLocation(string path)
         {
             _viewFolderLocation = path;

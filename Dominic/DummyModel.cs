@@ -1,6 +1,6 @@
 namespace Dominic
 {
-    public class DummyModel
+    internal class DummyModel
     {
         
     }

@@ -12,6 +12,12 @@ namespace Dominic.Getters
             _lookup = lookup;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
         public XmlNode ById(string id)
         {
             var elements = _lookup.QueryLookup(LookupType.Id, id);
@@ -24,6 +30,12 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
         public XmlNode ByType(string type)
         {
             var elements = _lookup.QueryLookup(LookupType.Type, type);
@@ -36,6 +48,12 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="testId"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
         public XmlNode ByTestId(string testId)
         {
             var elements = _lookup.QueryLookup(LookupType.TestId, testId);
@@ -48,6 +66,12 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="partialName"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
         public XmlNode ByPartialName(string partialName)
         {
             var elements = _lookup.QueryLookup(LookupType.PartialName, partialName);

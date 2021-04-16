@@ -39,8 +39,7 @@ namespace Dominic.Test
         {
             var sut = await Template.Render(
                 "Article.cshtml",
-                new Article {Title = "My title", Author = "Aaron Buckley"},
-                "Dominic.Tests.TestTemplates"
+                new Article {Title = "My title", Author = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
         }
@@ -50,8 +49,7 @@ namespace Dominic.Test
         {
             var sut = await Template.Render(
                 "WithLayout.cshtml",
-                new Article {Title = "My title", Author = "Aaron Buckley"},
-                "Dominic.Test.TestTemplates"
+                new Article {Title = "My title", Author = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
         }
@@ -61,8 +59,7 @@ namespace Dominic.Test
         {
             var sut = await Template.Render(
                 "WithDeclaredModel.cshtml",
-                new ExternalTestType {IsCool = true, Name = "Aaron Buckley"},
-                "Dominic.Test.TestTemplates"
+                new ExternalTestType {IsCool = true, Name = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
         }
@@ -72,15 +69,14 @@ namespace Dominic.Test
         {
             await Assert.ThrowsAsync<ArgumentException>(async () => await Template.Render(
                 "i-do-not-exist.cshtml",
-                new {Title = "My title", Author = "Aaron Buckley"},
-                "Dominic.Tests.TestTemplates"
+                new {Title = "My title", Author = "Aaron Buckley"}
             ));
         }
 
         [Fact]
         public async Task ItReturnsANewInstanceAfterRenderingWithoutAModel()
         {
-            var sut = await Template.Render("Navigation.cshtml", "Dominic.Tests.TestTemplates");
+            var sut = await Template.Render("Navigation.cshtml");
             Assert.NotNull(sut);
         }
 
@@ -88,14 +84,13 @@ namespace Dominic.Test
         public async Task ItThrowsAnErrorWhenNoTemplateIsFoundOnModelessRender()
         {
             await Assert.ThrowsAsync<ArgumentException>(async () =>
-                await Template.Render("i-do-not-exist.cshtml", "Dominic.Tests.TestTemplates"));
+                await Template.Render("i-do-not-exist.cshtml"));
         }
 
         [Fact]
         public async Task ItCanParseWithEmptyAttributes()
         {
-            var sut = await Template.Render("Form.cshtml", new {TestText = "my form title"},
-                "Dominic.Tests.TestTemplates");
+            var sut = await Template.Render("Form.cshtml", new {TestText = "my form title"});
 
             Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }

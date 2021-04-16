@@ -28,7 +28,7 @@ namespace Dominic.Test
                 } 
                 return new object();
             });
-            var sut = await Template.Render("_localisation.cshtml", new {TestText = "Hello World"}, "Dominic.Tests.TestTemplates");
+            var sut = await Template.Render("_localisation.cshtml", new {TestText = "Hello World"});
             Assert.NotNull(sut.GetOnly.ById("username"));
         }
     }
