@@ -402,13 +402,19 @@ Dominic
 
 ##### Returns
 
-
+A new instance of a rendered template, which can be queried.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Path of the view you wish to test, relative to the path configured with [SetViewLocation](#M-Dominic-Template-SetViewLocation-System-String- 'Dominic.Template.SetViewLocation(System.String)') |
+
+##### Example
+
+```
+Template myRenderedArticle = await Template.Render("MySimpleTemplate.cshtml");
+```
 
 <a name='M-Dominic-Template-Render``1-System-String,``0-'></a>
 ### Render\`\`1(path,model) `method`
@@ -419,7 +425,7 @@ Dominic
 
 ##### Returns
 
-
+A new instance of a rendered template, which can be queried.
 
 ##### Parameters
 
@@ -433,6 +439,15 @@ Dominic
 | Name | Description |
 | ---- | ----------- |
 | T | Type of the View Model |
+
+##### Example
+
+```
+Template myRenderedArticle = await Template.Render(
+    "MyArticle.cshtml",
+    new Article {Title = "My title", Author = "Aaron Buckley"}
+);
+```
 
 <a name='M-Dominic-Template-SetResolver-System-Func{System-Type,System-Object}-'></a>
 ### SetResolver(func) `method`
