@@ -85,9 +85,7 @@ var nodes = myRenderedArticle.GetAll.ById("example-id");
 Returns
 
 ```
-<p id="example-id">
-                 My cool paragraph 😎
-             </p>
+<p id="example-id">My cool paragraph 😎</p>
 ```
 
 <a name='M-Dominic-Getters-GetAll-ByPartialName-System-String-'></a>
@@ -113,12 +111,8 @@ Sample template
 
 ```
 <div>
-  <p data-testId="example-testId">
-             My cool paragraph 😎
-             </p>
-  <p data-testId="some-other-testId">
-             Try and find me!
-             </p>
+  <p data-testId="example-testId">My cool paragraph 😎</p>
+  <p data-testId="some-other-testId">Try and find me!</p>
   <div data-testId="example-testId">
     <partial name="_examplePartialName" />
   </div>

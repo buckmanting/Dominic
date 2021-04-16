@@ -36,12 +36,8 @@ namespace Dominic.Getters
         /// </code>
         /// Returns
         /// <code>
-        /// <p id="example-id">
-        ///     My cool paragraph 😎
-        /// </p>
-        /// <div id="example-id">
-        /// My other cool paragraph 😎
-        /// </div>
+        /// <p id="example-id">My cool paragraph 😎</p>
+        /// <div id="example-id">My other cool paragraph 😎</div>
         /// </code>
         ///</example>
         /// <param name="id"><c>Id</c> of the desired nodes</param>
