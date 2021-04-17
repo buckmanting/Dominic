@@ -130,16 +130,10 @@ There are four types of queries; `*.ById`, `*.ByType`, `*.ByTestId` and`*.ByPart
 
 |Selectors|What it matches on|
 |-------|---------------|
-|*.ById|This matches on the `id` attribute of an element. For example you could select the following element by its `id` ```html
-<div id="my-id">This is my content</div>
-```|
+|*.ById|This matches on the `id` attribute of an element. For example you could select the following element by its `id` ```html <div id="my-id">This is my content</div> ```|
 |*.ByType|This matches on the type of an element. For example this could be `div`, `p`, `section`, etc.|
-|*.ByTestId|This matches on the `data-testId` attribute of an element. For example you could select the following element by its `data-testId` ```html
-<section data-testId="my-test-id">This is my section</section>
-```|
-|*.ByPartialName|This matches on the `name` attribute of your partial. For example you could select the following element by its `data-testId` ```html
-<partial name="_MyCoolPartial" />
-```|
+|*.ByTestId|This matches on the `data-testId` attribute of an element. For example you could select the following element by its `data-testId` ```html <section data-testId="my-test-id">This is my section</section>```|
+|*.ByPartialName|This matches on the `name` attribute of your partial. For example you could select the following element by its `data-testId` ```html <partial name="_MyCoolPartial" />```|
 
 See the [API Documentation](API.md) for further information.
 
