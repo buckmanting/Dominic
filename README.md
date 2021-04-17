@@ -115,6 +115,32 @@ public async Task ByTestId_ItCanGet()
 ## API
 There are four `Getter`s to get elements from the rendered template; `GetOnly`, `GetFirst`, `GetLast` and `GetAll`. Each of these can query the rendered template with the following methods `ById`, `ByType`, `ByTestId` and`ByPartialName`. 
 
+### Queries
+There are four types of queries; `GetOnly`, `GetFirst`, `GetLast` and `GetAll`. Each of which is described below.
+
+|Queries|What it returns|
+|-------|---------------|
+|GetOnly|The only matching element. If there is more than one matching element an error will be thrown. If no matching elements are found it will return null|
+|GetFirst|The first matching element, if no matching elements are found it will return null|
+|GetLast|The last matching element, if no matching elements are found it will return null|
+|GetAll|All matching elements, if no matching elements are found it will return null|
+
+### Selectors
+There are four types of queries; `*.ById`, `*.ByType`, `*.ByTestId` and`*.ByPartialName`. Each of which is described below.
+
+|Selectors|What it matches on|
+|-------|---------------|
+|*.ById|This matches on the `id` attribute of an element. For example you could select the following element by its `id` ```html
+<div id="my-id">This is my content</div>
+```|
+|*.ByType|This matches on the type of an element. For example this could be `div`, `p`, `section`, etc.|
+|*.ByTestId|This matches on the `data-testId` attribute of an element. For example you could select the following element by its `data-testId` ```html
+<section data-testId="my-test-id">This is my section</section>
+```|
+|*.ByPartialName|This matches on the `name` attribute of your partial. For example you could select the following element by its `data-testId` ```html
+<partial name="_MyCoolPartial" />
+```|
+
 See the [API Documentation](API.md) for further information.
 
 ## How does it work?
