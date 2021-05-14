@@ -12,8 +12,8 @@ namespace Dominic.Test
     {
         public TemplateTests()
         {
-            var currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
-            var viewPath = $"{currentDirectory}/TestTemplates";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var viewPath = $"{currentDirectory}/Views";
             Template.SetViewLocation(viewPath);
         }
 
@@ -36,7 +36,7 @@ namespace Dominic.Test
         public async Task ItReturnsANewInstanceAfterRendering()
         {
             var sut = await Template.Render(
-                "Article.cshtml",
+                "TestView/Article.cshtml",
                 new Article {Title = "My title", Author = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
@@ -46,7 +46,7 @@ namespace Dominic.Test
         public async Task ItRendersWithATemplate()
         {
             var sut = await Template.Render(
-                "WithLayout.cshtml",
+                "TestView/WithLayout.cshtml",
                 new Article {Title = "My title", Author = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
@@ -56,7 +56,7 @@ namespace Dominic.Test
         public async Task ItRendersWithADeclaredModel()
         {
             var sut = await Template.Render(
-                "WithDeclaredModel.cshtml",
+                "TestView/WithDeclaredModel.cshtml",
                 new ExternalTestType {IsCool = true, Name = "Aaron Buckley"}
             );
             Assert.NotNull(sut);
@@ -74,7 +74,7 @@ namespace Dominic.Test
         [Fact]
         public async Task ItReturnsANewInstanceAfterRenderingWithoutAModel()
         {
-            var sut = await Template.Render("Navigation.cshtml");
+            var sut = await Template.Render("TestView/Navigation.cshtml");
             Assert.NotNull(sut);
         }
 
@@ -88,7 +88,7 @@ namespace Dominic.Test
         [Fact]
         public async Task ItCanParseWithEmptyAttributes()
         {
-            var sut = await Template.Render("Form.cshtml", new {TestText = "my form title"});
+            var sut = await Template.Render("TestView/Form.cshtml", new {TestText = "my form title"});
 
             Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }

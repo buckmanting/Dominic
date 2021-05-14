@@ -7,6 +7,7 @@ using RazorLight.Razor;
 namespace Dominic
 {
     using System;
+    using Exceptions;
 
     public class LayoutLocator : RazorLightProject
     {
@@ -30,7 +31,7 @@ namespace Dominic
                 return new FileSystemRazorProjectItem(templateKey, new FileInfo(path));
             }
             
-            throw new Exception("couldn't find the layout or template");
+            throw new ItemNotFoundException("couldn't find the layout or template");
         }
 
         public override Task<IEnumerable<RazorLightProjectItem>> GetImportsAsync(string templateKey)

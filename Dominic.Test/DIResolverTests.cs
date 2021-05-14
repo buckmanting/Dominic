@@ -11,8 +11,8 @@ namespace Dominic.Test
     {
         public DIResolverTests()
         {
-            var currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
-            var viewPath = $"{currentDirectory}/TestTemplates";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var viewPath = $"{currentDirectory}/Views/TestView";
             Template.SetViewLocation(viewPath);
         }
 

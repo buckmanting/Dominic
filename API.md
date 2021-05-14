@@ -23,6 +23,7 @@
   - [ByPartialName(partialName)](#M-Dominic-Getters-GetOnly-ByPartialName-System-String- 'Dominic.Getters.GetOnly.ByPartialName(System.String)')
   - [ByTestId(testId)](#M-Dominic-Getters-GetOnly-ByTestId-System-String- 'Dominic.Getters.GetOnly.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetOnly-ByType-System-String- 'Dominic.Getters.GetOnly.ByType(System.String)')
+- [ItemNotFoundException](#T-Dominic-Exceptions-ItemNotFoundException 'Dominic.Exceptions.ItemNotFoundException')
 - [Template](#T-Dominic-Template 'Dominic.Template')
   - [GetAll](#F-Dominic-Template-GetAll 'Dominic.Template.GetAll')
   - [GetFirst](#F-Dominic-Template-GetFirst 'Dominic.Template.GetFirst')
@@ -474,6 +475,17 @@ Dominic.Getters
 | Name | Description |
 | ---- | ----------- |
 | [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+
+<a name='T-Dominic-Exceptions-ItemNotFoundException'></a>
+## ItemNotFoundException `type`
+
+##### Namespace
+
+Dominic.Exceptions
+
+##### Summary
+
+
 
 <a name='T-Dominic-Template'></a>
 ## Template `type`
