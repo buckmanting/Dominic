@@ -13,8 +13,6 @@ using WhitespaceHandling = Sgml.WhitespaceHandling;
 
 namespace Dominic
 {
-    using Microsoft.AspNetCore.Razor.Language;
-
     public class Template
     {
         private static string _viewFolderLocation;
@@ -56,28 +54,29 @@ namespace Dominic
             GetAll = new GetAll(lookup);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <example>
-        /// <code>
-        /// Template myRenderedArticle = await Template.Render(
-        ///     "MyArticle.cshtml",
-        ///     new Article {Title = "My title", Author = "Aaron Buckley"}
-        /// );
-        /// </code>
-        ///</example>
-        /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
-        /// <param name="model">View Model of the view you wish to test</param>
-        /// <typeparam name="T">Type of the View Model</typeparam>
-        /// <returns>A new instance of a rendered template, which can be queried.</returns>
-        public static async Task<Template> Render<T>(string path, T model)
+        ///  <summary>
+        ///  
+        ///  </summary>
+        ///  <example>
+        ///  <code>
+        ///  Template myRenderedArticle = await Template.Render(
+        ///      "MyArticle.cshtml",
+        ///      new Article {Title = "My title", Author = "Aaron Buckley"}
+        ///  );
+        ///  </code>
+        /// </example>
+        ///  <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
+        ///  <param name="configuration">Configuration for the render engine to start up with</param>
+        ///  <param name="model">View Model of the view you wish to test</param>
+        ///  <typeparam name="T">Type of the View Model</typeparam>
+        ///  <returns>A new instance of a rendered template, which can be queried.</returns>
+        public static async Task<Template> Render<T>(string path, DominicConfiguration configuration, T model)
         {
-            var engine = StartEngine();
-            
+            var engine = StartEngine(configuration);
+
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
-                GetViewFromFile(path),
+                GetViewFromFile(path, configuration.ViewFolderLocation),
                 model
             );
 
@@ -85,59 +84,41 @@ namespace Dominic
             return new Template(FromHtml(GetTextReader(result)));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <example>
-        /// <code>
-        /// Template myRenderedArticle = await Template.Render("MySimpleTemplate.cshtml");
-        /// </code>
-        ///</example>
-        /// <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
-        /// <returns>A new instance of a rendered template, which can be queried.</returns>
-        public static async Task<Template> Render(string path)
+        ///  <summary>
+        ///  
+        ///  </summary>
+        ///  <example>
+        ///  <code>
+        ///  Template myRenderedArticle = await Template.Render("MySimpleTemplate.cshtml");
+        ///  </code>
+        /// </example>
+        ///  <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
+        ///  <param name="configuration">Configuration for the render engine to start up with</param>
+        ///  <returns>A new instance of a rendered template, which can be queried.</returns>
+        public static async Task<Template> Render(string path, DominicConfiguration configuration)
         {
-            var engine = StartEngine();
+            var engine = StartEngine(configuration);
 
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
-                GetViewFromFile(path),
+                GetViewFromFile(path, configuration.ViewFolderLocation),
                 new DummyModel()
             );
-            
-            
+
 
             // todo AB (05/03): this will fail if there is no root element, that should be tested for
             return new Template(FromHtml(GetTextReader(result)));
         }
 
-        private static string GetViewFromFile(string path)
+        private static string GetViewFromFile(string path, string viewFolderLocation)
         {
-            var fullPath = $"{_viewFolderLocation}/{path}";
+            var fullPath = $"{viewFolderLocation}/{path}";
             if (!File.Exists(fullPath))
             {
                 throw new ArgumentException($"path of: \"{path}\" does not exist at: \"{_viewFolderLocation}\"");
             }
 
             return File.ReadAllText(fullPath);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path">Root path of the views</param>
-        public static void SetViewLocation(string path)
-        {
-            _viewFolderLocation = path;
-        }
-
-        /// <summary>
-        /// TODO add documentation
-        /// </summary>
-        /// <param name="func"></param>
-        public static void SetResolver(Func<Type, object> func)
-        {
-            _resolver = func;
         }
 
         private static TextReader GetTextReader(string fromString)
@@ -157,12 +138,12 @@ namespace Dominic
             };
 
             // create document
-            var doc = new XmlDocument { PreserveWhitespace = true, XmlResolver = null };
+            var doc = new XmlDocument {PreserveWhitespace = true, XmlResolver = null};
             doc.Load(sgmlReader);
             return doc;
         }
 
-        private static void SetupPreRenderCallbacks(RazorLightEngine engine)
+        private static void SetupPreRenderCallbacks(RazorLightEngine engine, Func<Type, object> resolver)
         {
             engine.Options.PreRenderCallbacks.Add(template =>
             {
@@ -176,20 +157,20 @@ namespace Dominic
                 foreach (var property in properties)
                 {
                     var memberType = property.PropertyType;
-                    var instance = _resolver(memberType);
+                    var instance = resolver(memberType);
 
                     property.SetValue(template, instance);
                 }
             });
         }
 
-        private static RazorLightEngine StartEngine()
+        private static RazorLightEngine StartEngine(DominicConfiguration configuration)
         {
-            var project = new LayoutLocator($"{_viewFolderLocation}/Shared");
+            var project = new LayoutLocator($"{configuration.ViewFolderLocation}/Shared");
             var engine = new RazorLightEngineBuilder()
                 .UseProject(project)
                 .Build();
-            SetupPreRenderCallbacks(engine);
+            SetupPreRenderCallbacks(engine, configuration.Resolver);
 
             return engine;
         }

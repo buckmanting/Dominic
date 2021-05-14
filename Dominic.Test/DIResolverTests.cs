@@ -9,17 +9,14 @@ namespace Dominic.Test
 {
     public class DIResolverTests
     {
-        public DIResolverTests()
-        {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var viewPath = $"{currentDirectory}/Views/TestView";
-            Template.SetViewLocation(viewPath);
-        }
-
         [Fact]
         public async Task ItSupportsResolvingInjectedTypes()
         {
-            Template.SetResolver((Type memberType) =>
+            // Arragne
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var viewPath = $"{currentDirectory}/Views/TestView";
+
+            Func<Type, object> resolver = (Type memberType) =>
             {
                 if (memberType.Name == "IViewLocalizer")
                 {
@@ -27,8 +24,13 @@ namespace Dominic.Test
                 }
 
                 return new object();
-            });
-            var sut = await Template.Render("_localisation.cshtml", new {TestText = "Hello World"});
+            };
+
+            // Act
+            var configuration = new DominicConfiguration {ViewFolderLocation = viewPath, Resolver = resolver};
+            
+            // Assert
+            var sut = await Template.Render("_localisation.cshtml", configuration,new {TestText = "Hello World"});
             Assert.NotNull(sut.GetOnly.ById("username"));
         }
     }
