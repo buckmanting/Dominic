@@ -31,4 +31,8 @@
         <ProjectReference Include="..\Dominic\Dominic.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="TestTemplates\_Layout.cshtml" />
+    </ItemGroup>
+
 </Project>
