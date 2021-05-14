@@ -15,9 +15,6 @@ namespace Dominic
 {
     public class Template
     {
-        private static string _viewFolderLocation;
-        private static Func<Type, object> _resolver;
-
         /// <summary>
         /// <see cref="Dominic.Getters.GetOnly">See GetOnly</see>
         /// </summary>
@@ -115,7 +112,7 @@ namespace Dominic
             var fullPath = $"{viewFolderLocation}/{path}";
             if (!File.Exists(fullPath))
             {
-                throw new ArgumentException($"path of: \"{path}\" does not exist at: \"{_viewFolderLocation}\"");
+                throw new ArgumentException($"path of: \"{path}\" does not exist at: \"{viewFolderLocation}\"");
             }
 
             return File.ReadAllText(fullPath);
