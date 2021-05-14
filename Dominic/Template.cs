@@ -1,4 +1,5 @@
 using System;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -66,15 +67,17 @@ namespace Dominic
         ///  <param name="configuration">Configuration for the render engine to start up with</param>
         ///  <param name="model">View Model of the view you wish to test</param>
         ///  <typeparam name="T">Type of the View Model</typeparam>
+        ///  <param name="viewData"></param>
         ///  <returns>A new instance of a rendered template, which can be queried.</returns>
-        public static async Task<Template> Render<T>(string path, DominicConfiguration configuration, T model)
+        public static async Task<Template> Render<T>(string path, DominicConfiguration configuration, T model, ExpandoObject viewData = null)
         {
             var engine = StartEngine(configuration);
 
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
                 GetViewFromFile(path, configuration.ViewFolderLocation),
-                model
+                model,
+                viewData
             );
 
             // todo AB (05/03): this will fail if there is no root element, that should be tested for
@@ -91,15 +94,17 @@ namespace Dominic
         /// </example>
         ///  <param name="path">Path of the view you wish to test, relative to the path configured with <see cref="SetViewLocation">SetViewLocation(path)</see></param>
         ///  <param name="configuration">Configuration for the render engine to start up with</param>
+        ///  <param name="viewData"></param>
         ///  <returns>A new instance of a rendered template, which can be queried.</returns>
-        public static async Task<Template> Render(string path, DominicConfiguration configuration)
+        public static async Task<Template> Render(string path, DominicConfiguration configuration, ExpandoObject viewData = null)
         {
             var engine = StartEngine(configuration);
 
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
                 GetViewFromFile(path, configuration.ViewFolderLocation),
-                new DummyModel()
+                new DummyModel(),
+                viewData
             );
 
 

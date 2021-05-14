@@ -32,8 +32,8 @@
   - [GetFirst](#F-Dominic-Template-GetFirst 'Dominic.Template.GetFirst')
   - [GetLast](#F-Dominic-Template-GetLast 'Dominic.Template.GetLast')
   - [GetOnly](#F-Dominic-Template-GetOnly 'Dominic.Template.GetOnly')
-  - [Render(path,configuration)](#M-Dominic-Template-Render-System-String,Dominic-DominicConfiguration- 'Dominic.Template.Render(System.String,Dominic.DominicConfiguration)')
-  - [Render\`\`1(path,configuration,model)](#M-Dominic-Template-Render``1-System-String,Dominic-DominicConfiguration,``0- 'Dominic.Template.Render``1(System.String,Dominic.DominicConfiguration,``0)')
+  - [Render(path,configuration)](#M-Dominic-Template-Render-System-String,Dominic-DominicConfiguration,System-Dynamic-ExpandoObject- 'Dominic.Template.Render(System.String,Dominic.DominicConfiguration,System.Dynamic.ExpandoObject)')
+  - [Render\`\`1(path,configuration,model)](#M-Dominic-Template-Render``1-System-String,Dominic-DominicConfiguration,``0,System-Dynamic-ExpandoObject- 'Dominic.Template.Render``1(System.String,Dominic.DominicConfiguration,``0,System.Dynamic.ExpandoObject)')
 - [TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException')
 
 <a name='T-Dominic-DominicConfiguration'></a>
@@ -548,7 +548,7 @@ Dominic
 
 [GetOnly](#T-Dominic-Getters-GetOnly 'Dominic.Getters.GetOnly')
 
-<a name='M-Dominic-Template-Render-System-String,Dominic-DominicConfiguration-'></a>
+<a name='M-Dominic-Template-Render-System-String,Dominic-DominicConfiguration,System-Dynamic-ExpandoObject-'></a>
 ### Render(path,configuration) `method`
 
 ##### Summary
@@ -572,7 +572,7 @@ A new instance of a rendered template, which can be queried.
 Template myRenderedArticle = await Template.Render("MySimpleTemplate.cshtml");
 ```
 
-<a name='M-Dominic-Template-Render``1-System-String,Dominic-DominicConfiguration,``0-'></a>
+<a name='M-Dominic-Template-Render``1-System-String,Dominic-DominicConfiguration,``0,System-Dynamic-ExpandoObject-'></a>
 ### Render\`\`1(path,configuration,model) `method`
 
 ##### Summary
