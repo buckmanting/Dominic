@@ -1,206 +1,80 @@
-# Remove the line below if you want to inherit .editorconfig settings from higher directories
-root = true
-
-# C# files
 [*.cs]
 
-#### Core EditorConfig Options ####
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.SA1200.severity = none
 
-# Indentation and spacing
-indent_size = 4
-indent_style = space
-tab_width = 4
+# SA1208: System using directives should be placed before other using directives
+dotnet_diagnostic.SA1208.severity = suggestion
 
-# New line preferences
-end_of_line = crlf
-insert_final_newline = false
+# SA1210: Using directives should be ordered alphabetically by namespace
+dotnet_diagnostic.SA1210.severity = suggestion
 
-#### .NET Coding Conventions ####
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = none
 
-# Organize usings
-dotnet_separate_import_directive_groups = true
-dotnet_sort_system_directives_first = true
-file_header_template = unset
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
 
-# this. and Me. preferences
-dotnet_style_qualification_for_event = false:error
-dotnet_style_qualification_for_field = false:error
-dotnet_style_qualification_for_method = false:error
-dotnet_style_qualification_for_property = false:error
+# SA1028: Code should not contain trailing whitespace
+dotnet_diagnostic.SA1028.severity = suggestion
 
-# Language keywords vs BCL types preferences
-dotnet_style_predefined_type_for_locals_parameters_members = true:error
-dotnet_style_predefined_type_for_member_access = true:error
+# SA1118: Parameter should not span multiple lines
+dotnet_diagnostic.SA1118.severity = none
 
-# Parentheses preferences
-dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
-dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
-dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
-dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+# SA1202: Elements should be ordered by access
+dotnet_diagnostic.SA1202.severity = suggestion
 
-# Modifier preferences
-dotnet_style_require_accessibility_modifiers = for_non_interface_members:error
+# SA1204: Static elements should appear before instance elements
+dotnet_diagnostic.SA1204.severity = suggestion
 
-# Expression-level preferences
-dotnet_style_coalesce_expression = true:error
-dotnet_style_collection_initializer = true:error
-dotnet_style_explicit_tuple_names = true:error
-dotnet_style_null_propagation = true:error
-dotnet_style_object_initializer = true:error
-dotnet_style_operator_placement_when_wrapping = beginning_of_line
-dotnet_style_prefer_auto_properties = true:error
-dotnet_style_prefer_compound_assignment = true:error
-dotnet_style_prefer_conditional_expression_over_assignment = true:error
-dotnet_style_prefer_conditional_expression_over_return = true:error
-dotnet_style_prefer_inferred_anonymous_type_member_names = true:error
-dotnet_style_prefer_inferred_tuple_names = true:error
-dotnet_style_prefer_is_null_check_over_reference_equality_method = true:error
-dotnet_style_prefer_simplified_boolean_expressions = true:error
-dotnet_style_prefer_simplified_interpolation = true:error
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1413.severity = none
 
-# Field preferences
-dotnet_style_readonly_field = true:error
+# SA1629: Documentation text should end with a period
+dotnet_diagnostic.SA1629.severity = suggestion
 
-# Parameter preferences
-dotnet_code_quality_unused_parameters = all:error
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
 
-# Suppression preferences
-dotnet_remove_unnecessary_suppression_exclusions = none
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
 
-#### C# Coding Conventions ####
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = suggestion
 
-# var preferences
-csharp_style_var_elsewhere = true:error
-csharp_style_var_for_built_in_types = true:error
-csharp_style_var_when_type_is_apparent = true:error
+# SA1623: Property summary documentation should match accessors
+dotnet_diagnostic.SA1623.severity = none
 
-# Expression-bodied members
-csharp_style_expression_bodied_accessors = true:silent
-csharp_style_expression_bodied_constructors = false:silent
-csharp_style_expression_bodied_indexers = true:silent
-csharp_style_expression_bodied_lambdas = true:silent
-csharp_style_expression_bodied_local_functions = false:silent
-csharp_style_expression_bodied_methods = false:silent
-csharp_style_expression_bodied_operators = false:silent
-csharp_style_expression_bodied_properties = true:silent
+# SA1408: Conditional expressions should declare precedence
+dotnet_diagnostic.SA1408.severity = suggestion
 
-# Pattern matching preferences
-csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
-csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
-csharp_style_prefer_not_pattern = true:suggestion
-csharp_style_prefer_pattern_matching = true:silent
-csharp_style_prefer_switch_expression = true:suggestion
+# TODO: increase severity when we can clean up docs
+# Default severity for analyzer diagnostics with category 'StyleCop.CSharp.DocumentationRules'
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = suggestion
 
-# Null-checking preferences
-csharp_style_conditional_delegate_call = true:suggestion
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
 
-# Modifier preferences
-csharp_prefer_static_local_function = true:suggestion
-csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:silent
+# SA0001: Element documentation must have summary text
+dotnet_diagnostic.SA1606.severity = suggestion
 
-# Code-block preferences
-csharp_prefer_braces = true:silent
-csharp_prefer_simple_using_statement = true:error
+# SA1614: Element parameter documentation should have text
+dotnet_diagnostic.SA1614.severity = suggestion
 
-# Expression-level preferences
-csharp_prefer_simple_default_expression = true:suggestion
-csharp_style_deconstructed_variable_declaration = true:suggestion
-csharp_style_inlined_variable_declaration = true:suggestion
-csharp_style_pattern_local_over_anonymous_function = true:suggestion
-csharp_style_prefer_index_operator = true:suggestion
-csharp_style_prefer_range_operator = true:suggestion
-csharp_style_throw_expression = true:suggestion
-csharp_style_unused_value_assignment_preference = discard_variable:suggestion
-csharp_style_unused_value_expression_statement_preference = discard_variable:silent
+# SA1642: Constructor summary documentation should begin with standard text
+dotnet_diagnostic.SA1642.severity = suggestion
 
-# 'using' directive preferences
-csharp_using_directive_placement = inside_namespace:silent
+# SA1615: Element return value should be documented
+dotnet_diagnostic.SA1615.severity = suggestion
 
-#### C# Formatting Rules ####
+# SA1627: The document text within the 'exception' tag should not be empty
+dotnet_diagnostic.SA1627.severity = suggestion
 
-# New line preferences
-csharp_new_line_before_catch = true
-csharp_new_line_before_else = true
-csharp_new_line_before_finally = true
-csharp_new_line_before_members_in_anonymous_types = true
-csharp_new_line_before_members_in_object_initializers = true
-csharp_new_line_before_open_brace = all
-csharp_new_line_between_query_expression_clauses = true
+# SA1625: Element documentation should not be copied and pasted
+dotnet_diagnostic.SA1625.severity = suggestion
 
-# Indentation preferences
-csharp_indent_block_contents = true
-csharp_indent_braces = false
-csharp_indent_case_contents = true
-csharp_indent_case_contents_when_block = true
-csharp_indent_labels = one_less_than_current
-csharp_indent_switch_labels = true
+# SA1611: The documentation for parameter is missing
+dotnet_diagnostic.SA1611.severity = suggestion
 
-# Space preferences
-csharp_space_after_cast = false
-csharp_space_after_colon_in_inheritance_clause = true
-csharp_space_after_comma = true
-csharp_space_after_dot = false
-csharp_space_after_keywords_in_control_flow_statements = true
-csharp_space_after_semicolon_in_for_statement = true
-csharp_space_around_binary_operators = before_and_after
-csharp_space_around_declaration_statements = false
-csharp_space_before_colon_in_inheritance_clause = true
-csharp_space_before_comma = false
-csharp_space_before_dot = false
-csharp_space_before_open_square_brackets = false
-csharp_space_before_semicolon_in_for_statement = false
-csharp_space_between_empty_square_brackets = false
-csharp_space_between_method_call_empty_parameter_list_parentheses = false
-csharp_space_between_method_call_name_and_opening_parenthesis = false
-csharp_space_between_method_call_parameter_list_parentheses = false
-csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
-csharp_space_between_method_declaration_name_and_open_parenthesis = false
-csharp_space_between_method_declaration_parameter_list_parentheses = false
-csharp_space_between_parentheses = false
-csharp_space_between_square_brackets = false
-
-# Wrapping preferences
-csharp_preserve_single_line_blocks = true
-csharp_preserve_single_line_statements = true
-
-#### Naming styles ####
-
-# Naming rules
-
-dotnet_naming_rule.interface_should_be_begins_with_i.severity = error
-dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
-dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
-
-dotnet_naming_rule.types_should_be_pascal_case.severity = error
-dotnet_naming_rule.types_should_be_pascal_case.symbols = types
-dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
-
-dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = error
-dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
-dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
-
-# Symbol specifications
-
-dotnet_naming_symbols.interface.applicable_kinds = interface
-dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.interface.required_modifiers =
-
-dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
-dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.types.required_modifiers =
-
-dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
-dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers =
-
-# Naming styles
-
-dotnet_naming_style.pascal_case.required_prefix =
-dotnet_naming_style.pascal_case.required_suffix =
-dotnet_naming_style.pascal_case.word_separator =
-dotnet_naming_style.pascal_case.capitalization = pascal_case
-
-dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix =
-dotnet_naming_style.begins_with_i.word_separator =
-dotnet_naming_style.begins_with_i.capitalization = pascal_case
+# SA1616: Element return value documentation should have text
+dotnet_diagnostic.SA1616.severity = suggestion
