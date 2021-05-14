@@ -94,5 +94,6 @@ namespace Dominic.Test
 
             Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }
+
     }
 }

@@ -9,4 +9,15 @@
         <PreserveCompilationReferences>true</PreserveCompilationReferences>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Views\Layout\_Layout.cshtml" />
+      <Content Include="Views\Layout\_Layout.cshtml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Views\TestView\WithLayout.cshtml" />
+      <Content Include="Views\TestView\WithLayout.cshtml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

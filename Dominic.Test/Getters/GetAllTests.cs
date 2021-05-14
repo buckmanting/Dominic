@@ -1,8 +1,5 @@
 using System.IO;
 using System.Threading.Tasks;
-using Dominic.Exceptions;
-using Microsoft.AspNetCore.Mvc.Localization;
-using Moq;
 
 using Xunit;
 
