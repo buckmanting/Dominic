@@ -13,6 +13,8 @@ using WhitespaceHandling = Sgml.WhitespaceHandling;
 
 namespace Dominic
 {
+    using Microsoft.AspNetCore.Razor.Language;
+
     public class Template
     {
         private static string _viewFolderLocation;
@@ -71,13 +73,8 @@ namespace Dominic
         /// <returns>A new instance of a rendered template, which can be queried.</returns>
         public static async Task<Template> Render<T>(string path, T model)
         {
-            //todo add null/empty check on _viewFolderLocation
-            var engine = new RazorLightEngineBuilder()
-                .UseFileSystemProject(_viewFolderLocation)
-                .Build();
-
-            SetupPreRenderCallbacks(ref engine);
-
+            var engine = StartEngine();
+            
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
                 GetViewFromFile(path),
@@ -100,18 +97,15 @@ namespace Dominic
         /// <returns>A new instance of a rendered template, which can be queried.</returns>
         public static async Task<Template> Render(string path)
         {
-            //todo add null/empty check on _viewFolderLocation
-            var engine = new RazorLightEngineBuilder()
-                .UseFileSystemProject(_viewFolderLocation)
-                .Build();
-
-            SetupPreRenderCallbacks(ref engine);
+            var engine = StartEngine();
 
             var result = await engine.CompileRenderStringAsync(
                 "templateKey",
                 GetViewFromFile(path),
                 new DummyModel()
             );
+            
+            
 
             // todo AB (05/03): this will fail if there is no root element, that should be tested for
             return new Template(FromHtml(GetTextReader(result)));
@@ -168,7 +162,7 @@ namespace Dominic
             return doc;
         }
 
-        private static void SetupPreRenderCallbacks(ref RazorLightEngine engine)
+        private static void SetupPreRenderCallbacks(RazorLightEngine engine)
         {
             engine.Options.PreRenderCallbacks.Add(template =>
             {
@@ -187,6 +181,17 @@ namespace Dominic
                     property.SetValue(template, instance);
                 }
             });
+        }
+
+        private static RazorLightEngine StartEngine()
+        {
+            var project = new LayoutLocator($"{_viewFolderLocation}/Shared");
+            var engine = new RazorLightEngineBuilder()
+                .UseProject(project)
+                .Build();
+            SetupPreRenderCallbacks(engine);
+
+            return engine;
         }
     }
 }

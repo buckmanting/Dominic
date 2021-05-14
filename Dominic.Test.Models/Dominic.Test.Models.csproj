@@ -10,14 +10,65 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Views\Layout\_Layout.cshtml" />
-      <Content Include="Views\Layout\_Layout.cshtml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Views\TestView\WithLayout.cshtml" />
-      <Content Include="Views\TestView\WithLayout.cshtml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
+        <None Remove="Views\Layout\_Layout.cshtml" />
+        <Content Include="Views\Shared\_Layout.cshtml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Views\TestView\WithLayout.cshtml" />
+        <Content Include="Views\TestView\WithLayout.cshtml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
+
+        <PackageReference Include="RazorLight" Version="2.0.0-rc.3" />
+
+        <None Remove="Views\TestView\_localisation.cshtml" />
+
+        <Content Include="Views\TestView\_localisation.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\Article.cshtml" />
+
+        <Content Include="Views\TestView\Article.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\ComplexClasses.cshtml" />
+
+        <Content Include="Views\TestView\ComplexClasses.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\Form.cshtml" />
+
+        <Content Include="Views\TestView\Form.cshtml">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\MultipleDuplicateIds.cshtml" />
+
+        <Content Include="Views\TestView\MultipleDuplicateIds.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\MultipleUniqueIds.cshtml" />
+
+        <Content Include="Views\TestView\MultipleUniqueIds.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\Navigation.cshtml" />
+
+        <Content Include="Views\TestView\Navigation.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <None Remove="Views\TestView\WithDeclaredModel.cshtml" />
+
+        <Content Include="Views\TestView\WithDeclaredModel.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>

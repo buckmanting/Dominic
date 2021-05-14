@@ -2,14 +2,12 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
-using Dominic.Test.TestModels;
+using Dominic.Test.Models.TestModels;
+using Dominic.Test.Models;
 using Xunit;
 
 namespace Dominic.Test
 {
-    using Models;
-
     public class TemplateTests
     {
         public TemplateTests()
@@ -94,6 +92,5 @@ namespace Dominic.Test
 
             Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
         }
-
     }
 }
