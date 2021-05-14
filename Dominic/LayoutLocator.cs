@@ -30,8 +30,15 @@ namespace Dominic
             {
                 return new FileSystemRazorProjectItem(templateKey, new FileInfo(path));
             }
-            
-            throw new ItemNotFoundException("couldn't find the layout or template");
+
+            var pathWithExtension = $"{path}.cshtml";
+            if (File.Exists(pathWithExtension))
+            {
+                return new FileSystemRazorProjectItem(templateKey, new FileInfo(pathWithExtension));
+            }
+
+            throw new ItemNotFoundException(
+                $"Couldn't find templateKey \"{templateKey}\". Considered paths: \"{path}\", \"{pathWithExtension}\"");
         }
 
         public override Task<IEnumerable<RazorLightProjectItem>> GetImportsAsync(string templateKey)

@@ -24,6 +24,10 @@
 
         <None Remove="Views\TestView\_localisation.cshtml" />
 
+        <Content Include="Views\TestView\WithViewBag.cshtml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
         <Content Include="Views\TestView\_localisation.cshtml">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
