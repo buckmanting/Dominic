@@ -4,6 +4,7 @@ using System.Linq;
 using System.Xml;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Dominic.Test")]
+
 namespace Dominic.Enums
 {
     internal class Lookup
@@ -50,6 +51,27 @@ namespace Dominic.Enums
                 if (!string.IsNullOrWhiteSpace(node?.Attributes?["data-testid"]?.Value))
                 {
                     AddLookupItem(LookupType.TestId, node.Attributes["data-testid"].Value, node);
+                }
+
+                // add asp-for
+                if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-for"]?.Value))
+                {
+                    // should blow up if there is no name
+                    AddLookupItem(LookupType.AspFor, node.Attributes?["asp-for"]?.Value, node);
+                }
+
+                // add asp-action
+                if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-action"]?.Value))
+                {
+                    // should blow up if there is no name
+                    AddLookupItem(LookupType.AspAction, node.Attributes?["asp-action"]?.Value, node);
+                }
+
+                // add asp-controller
+                if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-controller"]?.Value))
+                {
+                    // should blow up if there is no name
+                    AddLookupItem(LookupType.AspController, node.Attributes?["asp-controller"]?.Value, node);
                 }
 
                 // add partialName

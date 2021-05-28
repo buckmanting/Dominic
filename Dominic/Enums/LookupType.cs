@@ -1,10 +1,15 @@
+using System.Runtime.CompilerServices;
+
 namespace Dominic.Enums
 {
-    internal enum LookupType
+    public enum LookupType
     {
         Id,
         TestId,
         Type,
-        PartialName
+        PartialName,
+        AspFor,
+        AspAction,
+        AspController
     }
 }

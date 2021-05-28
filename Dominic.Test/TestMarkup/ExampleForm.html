@@ -1,0 +1,43 @@
+﻿<main role="main">
+    <section>
+        <form method="POST" asp-controller="ExampleController" asp-action="ExampleAction">
+            <h1 data-testId="h1-test-id">Register</h1>
+            <a id="a-id" asp-controller="Account" asp-action="Login">
+                ◀︎ Back
+            </a>
+
+            <label for="FirstName">Frist Name</label>
+            <div class="c-form-group">
+                <input asp-for="FirstName" required/>
+                <partial name="_ErrorPartial" model="Model.FirstName"/>
+            </div>
+
+            <label for="LastName">Last Name</label>
+            <div class="c-form-group">
+                <input asp-for="LastName" required/>
+                <partial name="_ErrorPartial" model="Model.LastName"/>
+            </div>
+
+            <label for="Email">Email</label>
+            <div class="c-form-group">
+                <input asp-for="Email" required/>
+                <partial name="_ErrorPartial" model="Model.Email"/>
+            </div>
+
+            <input asp-for="Code"/>
+            <input asp-for="Username"/>
+            <input asp-for="RedirectUrl"/>
+
+            <a asp-controller="Home" asp-action="TermAndConditions">
+                Terms and Conditions
+            </a>
+            <a asp-controller="Home" asp-action="Privacy">
+                Privacy Policy
+            </a>
+
+            <p class="u-text-center u-mt-15">
+                <button id="button-id" type="submit" class="u-button u-button-width u-button--primary">Submit</button>
+            </p>
+        </form>
+    </section>
+</main>
