@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace Dominic.Getters
 {
-    public class GetOnly
+    public class GetOnly : ISelectorSingle
     {
         private Lookup _lookup;
         internal GetOnly(Lookup lookup)
@@ -79,6 +79,60 @@ namespace Dominic.Getters
             if (elements.Count > 1)
             {
                 throw new TooManyElementsFoundException($"found too many elements matching partialName \"{partialName}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspFor"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
+        public XmlNode ByAspFor(string aspFor)
+        {
+            var elements = _lookup.QueryLookup(LookupType.AspFor, aspFor);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching asp-for \"{aspFor}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspAction"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
+        public XmlNode ByAspAction(string aspAction)
+        {
+            var elements = _lookup.QueryLookup(LookupType.AspAction, aspAction);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching asp-action \"{aspAction}\"");
+            }
+
+            return elements.Count > 0 ? elements[0] : null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspController"></param>
+        /// <returns></returns>
+        /// <exception cref="TooManyElementsFoundException"></exception>
+        public XmlNode ByAspController(string aspController)
+        {
+            var elements = _lookup.QueryLookup(LookupType.AspController, aspController);
+
+            if (elements.Count > 1)
+            {
+                throw new TooManyElementsFoundException($"found too many elements matching asp-controller \"{aspController}\"");
             }
 
             return elements.Count > 0 ? elements[0] : null;

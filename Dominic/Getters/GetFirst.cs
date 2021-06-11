@@ -1,10 +1,11 @@
+using System;
 using System.Linq;
 using System.Xml;
 using Dominic.Enums;
 
 namespace Dominic.Getters
 {
-    public class GetFirst
+    public class GetFirst : ISelectorSingle
     {
         private Lookup _lookup;
         internal GetFirst(Lookup lookup)
@@ -50,6 +51,39 @@ namespace Dominic.Getters
         public XmlNode ByPartialName(string partialName)
         {
             return _lookup.QueryLookup(LookupType.PartialName, partialName).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspFor"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public XmlNode ByAspFor(string aspFor)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspAction"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public XmlNode ByAspAction(string aspAction)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aspController"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public XmlNode ByAspController(string aspController)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

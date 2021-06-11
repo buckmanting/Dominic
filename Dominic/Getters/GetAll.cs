@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace Dominic.Getters
 {
-    public class GetAll
+    public class GetAll : ISelectorMany
     {
         private Lookup _lookup;
         internal GetAll(Lookup lookup)
