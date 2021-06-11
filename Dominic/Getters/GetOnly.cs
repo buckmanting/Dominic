@@ -12,12 +12,7 @@ namespace Dominic.Getters
             _lookup = lookup;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        /// <inheritdoc />
         public XmlNode ById(string id)
         {
             var elements = _lookup.QueryLookup(LookupType.Id, id);
@@ -30,12 +25,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByType(string type)
         {
             var elements = _lookup.QueryLookup(LookupType.Type, type);
@@ -48,12 +39,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="testId"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByTestId(string testId)
         {
             var elements = _lookup.QueryLookup(LookupType.TestId, testId);
@@ -66,12 +53,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="partialName"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByPartialName(string partialName)
         {
             var elements = _lookup.QueryLookup(LookupType.PartialName, partialName);
@@ -84,12 +67,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspFor"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByAspFor(string aspFor)
         {
             var elements = _lookup.QueryLookup(LookupType.AspFor, aspFor);
@@ -102,12 +81,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspAction"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByAspAction(string aspAction)
         {
             var elements = _lookup.QueryLookup(LookupType.AspAction, aspAction);
@@ -120,12 +95,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspController"></param>
-        /// <returns></returns>
-        /// <exception cref="TooManyElementsFoundException"></exception>
+        
+        /// <inheritdoc />
         public XmlNode ByAspController(string aspController)
         {
             var elements = _lookup.QueryLookup(LookupType.AspController, aspController);

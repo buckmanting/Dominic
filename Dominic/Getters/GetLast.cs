@@ -14,74 +14,43 @@ namespace Dominic.Getters
             _lookup = lookup;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public XmlNode ById(string id)
         {
             return _lookup.QueryLookup(LookupType.Id, id).LastOrDefault();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public XmlNode ByType(string type)
         {
             return _lookup.QueryLookup(LookupType.Type, type).LastOrDefault();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="testId"></param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public XmlNode ByTestId(string testId)
         {
             return _lookup.QueryLookup(LookupType.TestId, testId).LastOrDefault();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="partialName"></param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public XmlNode ByPartialName(string partialName)
         {
             return _lookup.QueryLookup(LookupType.PartialName, partialName).LastOrDefault();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspFor"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <inheritdoc />
         public XmlNode ByAspFor(string aspFor)
         {
             throw new System.NotImplementedException();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspAction"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <inheritdoc />
         public XmlNode ByAspAction(string aspAction)
         {
             throw new System.NotImplementedException();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aspController"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <inheritdoc />
         public XmlNode ByAspController(string aspController)
         {
             throw new System.NotImplementedException();
