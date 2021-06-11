@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Xml;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Dominic.Test")]
@@ -24,10 +22,8 @@ namespace Dominic.Enums
             {
                 return _lookupTable[(lookupType, lookupValue)];
             }
-            else
-            {
-                return new List<XmlNode>();
-            }
+
+            return new List<XmlNode>();
         }
 
         internal void BuildLookup(XmlDocument document)
@@ -36,6 +32,8 @@ namespace Dominic.Enums
             // mark as built
         }
 
+        // Given that DOM is an acronym, we will disable the `InconsistentNaming` warning
+        // ReSharper disable once InconsistentNaming
         private void WalkDOM(XmlNodeList nodes)
         {
             for (var i = 0; i < nodes.Count; i++)
