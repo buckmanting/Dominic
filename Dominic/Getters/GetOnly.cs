@@ -1,19 +1,23 @@
 using Dominic.Exceptions;
 using Dominic.Enums;
 using System.Xml;
+using Dominic.Models;
 
 namespace Dominic.Getters
 {
     public class GetOnly : ISelectorSingle
     {
         private Lookup _lookup;
-        internal GetOnly(Lookup lookup)
+        private XmlDocument _markup;
+
+        internal GetOnly(Lookup lookup, XmlDocument markup)
         {
             _lookup = lookup;
+            _markup = markup;
         }
 
         /// <inheritdoc />
-        public XmlNode ById(string id)
+        public Element ById(string id)
         {
             var elements = _lookup.QueryLookup(LookupType.Id, id);
 
@@ -25,9 +29,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        
         /// <inheritdoc />
-        public XmlNode ByType(string type)
+        public Element ByType(string type)
         {
             var elements = _lookup.QueryLookup(LookupType.Type, type);
 
@@ -39,9 +42,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        
         /// <inheritdoc />
-        public XmlNode ByTestId(string testId)
+        public Element ByTestId(string testId)
         {
             var elements = _lookup.QueryLookup(LookupType.TestId, testId);
 
@@ -53,11 +55,12 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        
         /// <inheritdoc />
-        public XmlNode ByPartialName(string partialName)
+        public Element ByPartialName(string partialName)
         {
             var elements = _lookup.QueryLookup(LookupType.PartialName, partialName);
+            
+            PrintMarkup.WriteCouldNotFind(_markup, LookupType.PartialName, partialName);
 
             if (elements.Count > 1)
             {
@@ -67,9 +70,8 @@ namespace Dominic.Getters
             return elements.Count > 0 ? elements[0] : null;
         }
 
-        
         /// <inheritdoc />
-        public XmlNode ByAspFor(string aspFor)
+        public Element ByAspFor(string aspFor)
         {
             var elements = _lookup.QueryLookup(LookupType.AspFor, aspFor);
 
@@ -83,7 +85,7 @@ namespace Dominic.Getters
 
         
         /// <inheritdoc />
-        public XmlNode ByAspAction(string aspAction)
+        public Element ByAspAction(string aspAction)
         {
             var elements = _lookup.QueryLookup(LookupType.AspAction, aspAction);
 
@@ -97,7 +99,7 @@ namespace Dominic.Getters
 
         
         /// <inheritdoc />
-        public XmlNode ByAspController(string aspController)
+        public Element ByAspController(string aspController)
         {
             var elements = _lookup.QueryLookup(LookupType.AspController, aspController);
 

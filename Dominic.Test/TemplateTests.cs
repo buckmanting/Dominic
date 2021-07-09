@@ -116,7 +116,7 @@ namespace Dominic.Test
         {
             var sut = await Template.Render("TestView/Form.cshtml", _configuration, new { TestText = "my form title" });
 
-            Assert.Equal("disabled", sut.GetOnly.ById("my-button").Attributes["disabled"].Value);
+            Assert.Equal("disabled", sut.GetOnly.ById("my-button").Node.Attributes["disabled"].Value);
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Xml;
 using Dominic.Enums;
+using Dominic.Models;
 
 namespace Dominic.Getters
 {
@@ -15,51 +16,51 @@ namespace Dominic.Getters
 
         
         /// <inheritdoc />
-        public XmlNode ById(string id)
+        public Element ById(string id)
         {
             return _lookup.QueryLookup(LookupType.Id, id).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByType(string type)
+        public Element ByType(string type)
         {
             return _lookup.QueryLookup(LookupType.Type, type).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByTestId(string testId)
+        public Element ByTestId(string testId)
         {
             return _lookup.QueryLookup(LookupType.TestId, testId).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByPartialName(string partialName)
+        public Element ByPartialName(string partialName)
         {
             return _lookup.QueryLookup(LookupType.PartialName, partialName).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByAspFor(string aspFor)
+        public Element ByAspFor(string aspFor)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.AspFor, aspFor).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByAspAction(string aspAction)
+        public Element ByAspAction(string aspAction)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.AspAction, aspAction).FirstOrDefault();
         }
 
         
         /// <inheritdoc />
-        public XmlNode ByAspController(string aspController)
+        public Element ByAspController(string aspController)
         {
-            throw new System.NotImplementedException();
+            return _lookup.QueryLookup(LookupType.AspController, aspController).FirstOrDefault();
         }
     }
 }

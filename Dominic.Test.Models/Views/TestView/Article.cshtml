@@ -1,6 +1,12 @@
 <article>
-    <h2>@Model.Title</h2>
+    <h1>Now this is a story!</h1>
+    <h2 data-testId="first-h2">@Model.Title</h2>
     <p>My fantastic example</p>
     <p data-testId="cool-test-id">Written by @Model.Author</p>
-    <partial name="_PartialName.cshtml" />
+    <p data-testId="cool-test-id">A second Paragraph</p>
+    <p data-testId="cool-test-id">A last Paragraph</p>
+    <h2>Next title</h2>
+    <partial name="_PartialName.cshtml"/>
+    <partial name="_PartialNameTwo.cshtml"/>
+    <partial name="_PartialNameThree.cshtml"/>
 </article>

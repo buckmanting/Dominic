@@ -5,11 +5,11 @@ using Xunit;
 
 namespace Dominic.Test.Getters
 {
-    public class GetOnlyTests
+    public class GetLastTests
     {
         private DominicConfiguration _configuration;
 
-        public GetOnlyTests()
+        public GetLastTests()
         {
             var currentDirectory = Directory.GetCurrentDirectory();
             var viewPath = $"{currentDirectory}/Views/TestView";
@@ -20,20 +20,10 @@ namespace Dominic.Test.Getters
         public async Task ById_ItCanGet()
         {
             var sut = await Template.Render(
-                "MultipleUniqueIds.cshtml",
-                _configuration,
-                new { TestText = "Hello World" });
-            Assert.Equal("My Div One, Hello World", sut.GetOnly.ById("div-1").InnerText);
-        }
-
-        [Fact]
-        public async Task ById_ItThrowsAnErrorWhenMoreThanOneElementFound()
-        {
-            var sut = await Template.Render(
                 "MultipleDuplicateIds.cshtml",
                 _configuration,
                 new { TestText = "Hello World" });
-            Assert.Throws<TooManyElementsFoundException>(() => sut.GetOnly.ById("div-1"));
+            Assert.Equal("My Div Four, Hello World", sut.GetLast.ById("div-1").InnerText);
         }
 
         [Fact]
@@ -43,7 +33,7 @@ namespace Dominic.Test.Getters
                 "MultipleUniqueIds.cshtml",
                 _configuration,
                 new { TestText = "Hello World" });
-            Assert.Null(sut.GetOnly.ById("not-a-real-id"));
+            Assert.Null(sut.GetLast.ById("not-a-real-id"));
         }
 
         [Fact]
@@ -53,17 +43,7 @@ namespace Dominic.Test.Getters
                 "Article.cshtml",
                 _configuration,
                 new { Title = "A cool title", Author = "Aaron Buckley" });
-            Assert.Equal("A cool title", sut.GetOnly.ByTestId("first-h2").InnerText);
-        }
-
-        [Fact]
-        public async Task ByTestId_ItThrowsAnErrorWhenMoreThanOneElementFound()
-        {
-            var sut = await Template.Render(
-                "MultipleDuplicateIds.cshtml",
-                _configuration,
-                new { TestText = "Hello World" });
-            Assert.Throws<TooManyElementsFoundException>(() => sut.GetOnly.ByTestId("my-test-id"));
+            Assert.Equal("A last Paragraph", sut.GetLast.ByTestId("cool-test-id").InnerText);
         }
 
         [Fact]
@@ -73,7 +53,7 @@ namespace Dominic.Test.Getters
                 "MultipleUniqueIds.cshtml",
                 _configuration,
                 new { TestText = "Hello World" });
-            Assert.Null(sut.GetOnly.ByTestId("not-a-real-id"));
+            Assert.Null(sut.GetLast.ByTestId("not-a-real-id"));
         }
 
         [Fact]
@@ -83,17 +63,7 @@ namespace Dominic.Test.Getters
                 "Article.cshtml",
                 _configuration,
                 new { Title = "A cool title", Author = "Aaron Buckley" });
-            Assert.Equal("Now this is a story!", sut.GetOnly.ByType("h1").InnerText);
-        }
-
-        [Fact]
-        public async Task ByType_ItThrowsAnErrorWhenMoreThanOneElementFound()
-        {
-            var sut = await Template.Render(
-                "MultipleDuplicateIds.cshtml",
-                _configuration,
-                new { TestText = "Hello World" });
-            Assert.Throws<TooManyElementsFoundException>(() => sut.GetOnly.ByType("div"));
+            Assert.Equal("Next title", sut.GetLast.ByType("h2").InnerText);
         }
 
         [Fact]
@@ -103,7 +73,7 @@ namespace Dominic.Test.Getters
                 "MultipleUniqueIds.cshtml",
                 _configuration,
                 new { TestText = "Hello World" });
-            Assert.Null(sut.GetOnly.ByType("not-real"));
+            Assert.Null(sut.GetLast.ByType("not-real"));
         }
 
         [Fact]
@@ -113,17 +83,7 @@ namespace Dominic.Test.Getters
                 "Article.cshtml",
                 _configuration,
                 new { Title = "A cool title", Author = "Aaron Buckley" });
-            Assert.NotNull(sut.GetOnly.ByPartialName("_PartialName.cshtml"));
-        }
-
-        [Fact]
-        public async Task ByPartialName_ItThrowsAnErrorWhenMoreThanOneElementFound()
-        {
-            var sut = await Template.Render(
-                "MultipleDuplicateIds.cshtml",
-                _configuration,
-                new { TestText = "Hello World" });
-            Assert.Throws<TooManyElementsFoundException>(() => sut.GetOnly.ByPartialName("common-partial"));
+            Assert.NotNull(sut.GetLast.ByPartialName("_PartialName.cshtml"));
         }
 
         [Fact]
@@ -133,7 +93,7 @@ namespace Dominic.Test.Getters
                 "MultipleUniqueIds.cshtml",
                 _configuration,
                 new { TestText = "Hello World" });
-            Assert.Null(sut.GetOnly.ByPartialName("not-real"));
+            Assert.Null(sut.GetLast.ByPartialName("not-real"));
         }
 
         [Fact]
@@ -150,7 +110,7 @@ namespace Dominic.Test.Getters
                 "another-class",
                 "col-12"
             };
-            Assert.Equal(expectedClasses, sut.GetOnly.ById("a-lot-of-classes").Classes);
+            Assert.Equal(expectedClasses, sut.GetLast.ById("a-lot-of-classes").Classes);
         }
     }
 }

@@ -1,8 +1,12 @@
 using System.Xml;
 using Dominic.Exceptions;
+using Dominic.Models;
 
 namespace Dominic.Getters
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface ISelectorSingle
     {
         /// <summary>
@@ -11,7 +15,7 @@ namespace Dominic.Getters
         /// <param name="id"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ById(string id);
+        Element ById(string id);
 
         /// <summary>
         /// 
@@ -19,7 +23,7 @@ namespace Dominic.Getters
         /// <param name="type"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByType(string type);
+        Element ByType(string type);
 
         /// <summary>
         /// 
@@ -27,7 +31,7 @@ namespace Dominic.Getters
         /// <param name="testId"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByTestId(string testId);
+        Element ByTestId(string testId);
 
         /// <summary>
         /// 
@@ -35,7 +39,7 @@ namespace Dominic.Getters
         /// <param name="partialName"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByPartialName(string partialName);
+        Element ByPartialName(string partialName);
 
         /// <summary>
         /// 
@@ -43,7 +47,7 @@ namespace Dominic.Getters
         /// <param name="aspFor"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByAspFor(string aspFor);
+        Element ByAspFor(string aspFor);
 
         /// <summary>
         /// 
@@ -51,7 +55,7 @@ namespace Dominic.Getters
         /// <param name="aspAction"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByAspAction(string aspAction);
+        Element ByAspAction(string aspAction);
 
         /// <summary>
         /// 
@@ -59,6 +63,6 @@ namespace Dominic.Getters
         /// <param name="aspController"></param>
         /// <returns></returns>
         /// <exception cref="TooManyElementsFoundException"></exception>
-        XmlNode ByAspController(string aspController);
+        Element ByAspController(string aspController);
     }
 }

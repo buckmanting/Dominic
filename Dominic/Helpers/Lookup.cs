@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
+using Dominic.Models;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Dominic.Test")]
 
@@ -8,14 +9,14 @@ namespace Dominic.Enums
     internal class Lookup
     {
         // Looking up by, Looking for, CacheID(s) to find 
-        private readonly Dictionary<(LookupType, string), List<XmlNode>> _lookupTable;
+        private readonly Dictionary<(LookupType, string), List<Element>> _lookupTable;
 
         internal Lookup()
         {
-            _lookupTable = new Dictionary<(LookupType, string), List<XmlNode>>();
+            _lookupTable = new Dictionary<(LookupType, string), List<Element>>();
         }
 
-        internal List<XmlNode> QueryLookup(LookupType lookupType, string lookupValue)
+        internal List<Element> QueryLookup(LookupType lookupType, string lookupValue)
         {
             // throw if not built
             if (_lookupTable.ContainsKey((lookupType, lookupValue)))
@@ -23,7 +24,7 @@ namespace Dominic.Enums
                 return _lookupTable[(lookupType, lookupValue)];
             }
 
-            return new List<XmlNode>();
+            return new List<Element>();
         }
 
         internal void BuildLookup(XmlDocument document)
@@ -54,21 +55,18 @@ namespace Dominic.Enums
                 // add asp-for
                 if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-for"]?.Value))
                 {
-                    // should blow up if there is no name
                     AddLookupItem(LookupType.AspFor, node.Attributes?["asp-for"]?.Value, node);
                 }
 
                 // add asp-action
                 if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-action"]?.Value))
                 {
-                    // should blow up if there is no name
                     AddLookupItem(LookupType.AspAction, node.Attributes?["asp-action"]?.Value, node);
                 }
 
                 // add asp-controller
                 if (!string.IsNullOrWhiteSpace(node?.Attributes?["asp-controller"]?.Value))
                 {
-                    // should blow up if there is no name
                     AddLookupItem(LookupType.AspController, node.Attributes?["asp-controller"]?.Value, node);
                 }
 
@@ -92,13 +90,15 @@ namespace Dominic.Enums
 
         private void AddLookupItem(LookupType lookupType, string lookupValue, XmlNode node)
         {
+            var element = new Element(node);
+
             if (_lookupTable.ContainsKey((lookupType, lookupValue)))
             {
-                _lookupTable[(lookupType, lookupValue)].Add(node);
+                _lookupTable[(lookupType, lookupValue)].Add(element);
             }
             else
             {
-                _lookupTable.Add((lookupType, lookupValue), new List<XmlNode> { node });
+                _lookupTable.Add((lookupType, lookupValue), new List<Element> { element });
             }
         }
     }

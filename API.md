@@ -6,35 +6,46 @@
 - [DominicConfiguration](#T-Dominic-DominicConfiguration 'Dominic.DominicConfiguration')
   - [Resolver](#F-Dominic-DominicConfiguration-Resolver 'Dominic.DominicConfiguration.Resolver')
   - [ViewFolderLocation](#F-Dominic-DominicConfiguration-ViewFolderLocation 'Dominic.DominicConfiguration.ViewFolderLocation')
+- [Element](#T-Dominic-Models-Element 'Dominic.Models.Element')
+  - [Children](#P-Dominic-Models-Element-Children 'Dominic.Models.Element.Children')
+  - [Classes](#P-Dominic-Models-Element-Classes 'Dominic.Models.Element.Classes')
+  - [FirstChild](#P-Dominic-Models-Element-FirstChild 'Dominic.Models.Element.FirstChild')
+  - [InnerHtml](#P-Dominic-Models-Element-InnerHtml 'Dominic.Models.Element.InnerHtml')
+  - [InnerText](#P-Dominic-Models-Element-InnerText 'Dominic.Models.Element.InnerText')
+  - [LastChild](#P-Dominic-Models-Element-LastChild 'Dominic.Models.Element.LastChild')
+  - [Node](#P-Dominic-Models-Element-Node 'Dominic.Models.Element.Node')
 - [GetAll](#T-Dominic-Getters-GetAll 'Dominic.Getters.GetAll')
+  - [ByAspAction()](#M-Dominic-Getters-GetAll-ByAspAction-System-String- 'Dominic.Getters.GetAll.ByAspAction(System.String)')
+  - [ByAspController()](#M-Dominic-Getters-GetAll-ByAspController-System-String- 'Dominic.Getters.GetAll.ByAspController(System.String)')
+  - [ByAspFor()](#M-Dominic-Getters-GetAll-ByAspFor-System-String- 'Dominic.Getters.GetAll.ByAspFor(System.String)')
   - [ById(id)](#M-Dominic-Getters-GetAll-ById-System-String- 'Dominic.Getters.GetAll.ById(System.String)')
   - [ByPartialName(partialName)](#M-Dominic-Getters-GetAll-ByPartialName-System-String- 'Dominic.Getters.GetAll.ByPartialName(System.String)')
   - [ByTestId(testId)](#M-Dominic-Getters-GetAll-ByTestId-System-String- 'Dominic.Getters.GetAll.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-GetAll-ByType-System-String- 'Dominic.Getters.GetAll.ByType(System.String)')
 - [GetFirst](#T-Dominic-Getters-GetFirst 'Dominic.Getters.GetFirst')
-  - [ByAspAction(aspAction)](#M-Dominic-Getters-GetFirst-ByAspAction-System-String- 'Dominic.Getters.GetFirst.ByAspAction(System.String)')
-  - [ByAspController(aspController)](#M-Dominic-Getters-GetFirst-ByAspController-System-String- 'Dominic.Getters.GetFirst.ByAspController(System.String)')
-  - [ByAspFor(aspFor)](#M-Dominic-Getters-GetFirst-ByAspFor-System-String- 'Dominic.Getters.GetFirst.ByAspFor(System.String)')
-  - [ById(id)](#M-Dominic-Getters-GetFirst-ById-System-String- 'Dominic.Getters.GetFirst.ById(System.String)')
-  - [ByPartialName(partialName)](#M-Dominic-Getters-GetFirst-ByPartialName-System-String- 'Dominic.Getters.GetFirst.ByPartialName(System.String)')
-  - [ByTestId(testId)](#M-Dominic-Getters-GetFirst-ByTestId-System-String- 'Dominic.Getters.GetFirst.ByTestId(System.String)')
-  - [ByType(type)](#M-Dominic-Getters-GetFirst-ByType-System-String- 'Dominic.Getters.GetFirst.ByType(System.String)')
+  - [ByAspAction()](#M-Dominic-Getters-GetFirst-ByAspAction-System-String- 'Dominic.Getters.GetFirst.ByAspAction(System.String)')
+  - [ByAspController()](#M-Dominic-Getters-GetFirst-ByAspController-System-String- 'Dominic.Getters.GetFirst.ByAspController(System.String)')
+  - [ByAspFor()](#M-Dominic-Getters-GetFirst-ByAspFor-System-String- 'Dominic.Getters.GetFirst.ByAspFor(System.String)')
+  - [ById()](#M-Dominic-Getters-GetFirst-ById-System-String- 'Dominic.Getters.GetFirst.ById(System.String)')
+  - [ByPartialName()](#M-Dominic-Getters-GetFirst-ByPartialName-System-String- 'Dominic.Getters.GetFirst.ByPartialName(System.String)')
+  - [ByTestId()](#M-Dominic-Getters-GetFirst-ByTestId-System-String- 'Dominic.Getters.GetFirst.ByTestId(System.String)')
+  - [ByType()](#M-Dominic-Getters-GetFirst-ByType-System-String- 'Dominic.Getters.GetFirst.ByType(System.String)')
 - [GetLast](#T-Dominic-Getters-GetLast 'Dominic.Getters.GetLast')
-  - [ByAspAction(aspAction)](#M-Dominic-Getters-GetLast-ByAspAction-System-String- 'Dominic.Getters.GetLast.ByAspAction(System.String)')
-  - [ByAspController(aspController)](#M-Dominic-Getters-GetLast-ByAspController-System-String- 'Dominic.Getters.GetLast.ByAspController(System.String)')
-  - [ByAspFor(aspFor)](#M-Dominic-Getters-GetLast-ByAspFor-System-String- 'Dominic.Getters.GetLast.ByAspFor(System.String)')
-  - [ById(id)](#M-Dominic-Getters-GetLast-ById-System-String- 'Dominic.Getters.GetLast.ById(System.String)')
-  - [ByPartialName(partialName)](#M-Dominic-Getters-GetLast-ByPartialName-System-String- 'Dominic.Getters.GetLast.ByPartialName(System.String)')
-  - [ByTestId(testId)](#M-Dominic-Getters-GetLast-ByTestId-System-String- 'Dominic.Getters.GetLast.ByTestId(System.String)')
-  - [ByType(type)](#M-Dominic-Getters-GetLast-ByType-System-String- 'Dominic.Getters.GetLast.ByType(System.String)')
+  - [ByAspAction()](#M-Dominic-Getters-GetLast-ByAspAction-System-String- 'Dominic.Getters.GetLast.ByAspAction(System.String)')
+  - [ByAspController()](#M-Dominic-Getters-GetLast-ByAspController-System-String- 'Dominic.Getters.GetLast.ByAspController(System.String)')
+  - [ByAspFor()](#M-Dominic-Getters-GetLast-ByAspFor-System-String- 'Dominic.Getters.GetLast.ByAspFor(System.String)')
+  - [ById()](#M-Dominic-Getters-GetLast-ById-System-String- 'Dominic.Getters.GetLast.ById(System.String)')
+  - [ByPartialName()](#M-Dominic-Getters-GetLast-ByPartialName-System-String- 'Dominic.Getters.GetLast.ByPartialName(System.String)')
+  - [ByTestId()](#M-Dominic-Getters-GetLast-ByTestId-System-String- 'Dominic.Getters.GetLast.ByTestId(System.String)')
+  - [ByType()](#M-Dominic-Getters-GetLast-ByType-System-String- 'Dominic.Getters.GetLast.ByType(System.String)')
 - [GetOnly](#T-Dominic-Getters-GetOnly 'Dominic.Getters.GetOnly')
-  - [ByAspAction(aspAction)](#M-Dominic-Getters-GetOnly-ByAspAction-System-String- 'Dominic.Getters.GetOnly.ByAspAction(System.String)')
-  - [ByAspController(aspController)](#M-Dominic-Getters-GetOnly-ByAspController-System-String- 'Dominic.Getters.GetOnly.ByAspController(System.String)')
-  - [ByAspFor(aspFor)](#M-Dominic-Getters-GetOnly-ByAspFor-System-String- 'Dominic.Getters.GetOnly.ByAspFor(System.String)')
-  - [ById(id)](#M-Dominic-Getters-GetOnly-ById-System-String- 'Dominic.Getters.GetOnly.ById(System.String)')
-  - [ByPartialName(partialName)](#M-Dominic-Getters-GetOnly-ByPartialName-System-String- 'Dominic.Getters.GetOnly.ByPartialName(System.String)')
-  - [ByTestId(testId)](#M-Dominic-Getters-GetOnly-ByTestId-System-String- 'Dominic.Getters.GetOnly.ByTestId(System.String)')
-  - [ByType(type)](#M-Dominic-Getters-GetOnly-ByType-System-String- 'Dominic.Getters.GetOnly.ByType(System.String)')
+  - [ByAspAction()](#M-Dominic-Getters-GetOnly-ByAspAction-System-String- 'Dominic.Getters.GetOnly.ByAspAction(System.String)')
+  - [ByAspController()](#M-Dominic-Getters-GetOnly-ByAspController-System-String- 'Dominic.Getters.GetOnly.ByAspController(System.String)')
+  - [ByAspFor()](#M-Dominic-Getters-GetOnly-ByAspFor-System-String- 'Dominic.Getters.GetOnly.ByAspFor(System.String)')
+  - [ById()](#M-Dominic-Getters-GetOnly-ById-System-String- 'Dominic.Getters.GetOnly.ById(System.String)')
+  - [ByPartialName()](#M-Dominic-Getters-GetOnly-ByPartialName-System-String- 'Dominic.Getters.GetOnly.ByPartialName(System.String)')
+  - [ByTestId()](#M-Dominic-Getters-GetOnly-ByTestId-System-String- 'Dominic.Getters.GetOnly.ByTestId(System.String)')
+  - [ByType()](#M-Dominic-Getters-GetOnly-ByType-System-String- 'Dominic.Getters.GetOnly.ByType(System.String)')
 - [ISelectorMany](#T-Dominic-Getters-ISelectorMany 'Dominic.Getters.ISelectorMany')
   - [ById(id)](#M-Dominic-Getters-ISelectorMany-ById-System-String- 'Dominic.Getters.ISelectorMany.ById(System.String)')
   - [ByPartialName(partialName)](#M-Dominic-Getters-ISelectorMany-ByPartialName-System-String- 'Dominic.Getters.ISelectorMany.ByPartialName(System.String)')
@@ -49,6 +60,8 @@
   - [ByTestId(testId)](#M-Dominic-Getters-ISelectorSingle-ByTestId-System-String- 'Dominic.Getters.ISelectorSingle.ByTestId(System.String)')
   - [ByType(type)](#M-Dominic-Getters-ISelectorSingle-ByType-System-String- 'Dominic.Getters.ISelectorSingle.ByType(System.String)')
 - [ItemNotFoundException](#T-Dominic-Exceptions-ItemNotFoundException 'Dominic.Exceptions.ItemNotFoundException')
+- [PrintMarkup](#T-Dominic-Enums-PrintMarkup 'Dominic.Enums.PrintMarkup')
+  - [WriteCouldNotFind(markup,type,selector)](#M-Dominic-Enums-PrintMarkup-WriteCouldNotFind-System-Xml-XmlDocument,Dominic-Enums-LookupType,System-String- 'Dominic.Enums.PrintMarkup.WriteCouldNotFind(System.Xml.XmlDocument,Dominic.Enums.LookupType,System.String)')
 - [Template](#T-Dominic-Template 'Dominic.Template')
   - [GetAll](#F-Dominic-Template-GetAll 'Dominic.Template.GetAll')
   - [GetFirst](#F-Dominic-Template-GetFirst 'Dominic.Template.GetFirst')
@@ -83,12 +96,101 @@ Dominic
 
 
 
+<a name='T-Dominic-Models-Element'></a>
+## Element `type`
+
+##### Namespace
+
+Dominic.Models
+
+<a name='P-Dominic-Models-Element-Children'></a>
+### Children `property`
+
+##### Summary
+
+
+
+<a name='P-Dominic-Models-Element-Classes'></a>
+### Classes `property`
+
+##### Summary
+
+An array of class on the element
+
+<a name='P-Dominic-Models-Element-FirstChild'></a>
+### FirstChild `property`
+
+##### Summary
+
+
+
+<a name='P-Dominic-Models-Element-InnerHtml'></a>
+### InnerHtml `property`
+
+##### Summary
+
+
+
+<a name='P-Dominic-Models-Element-InnerText'></a>
+### InnerText `property`
+
+##### Summary
+
+
+
+<a name='P-Dominic-Models-Element-LastChild'></a>
+### LastChild `property`
+
+##### Summary
+
+
+
+<a name='P-Dominic-Models-Element-Node'></a>
+### Node `property`
+
+##### Summary
+
+Element as an XmlNode
+
 <a name='T-Dominic-Getters-GetAll'></a>
 ## GetAll `type`
 
 ##### Namespace
 
 Dominic.Getters
+
+<a name='M-Dominic-Getters-GetAll-ByAspAction-System-String-'></a>
+### ByAspAction() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-Dominic-Getters-GetAll-ByAspController-System-String-'></a>
+### ByAspController() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-Dominic-Getters-GetAll-ByAspFor-System-String-'></a>
+### ByAspFor() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetAll-ById-System-String-'></a>
 ### ById(id) `method`
@@ -283,141 +385,81 @@ Returns
 Dominic.Getters
 
 <a name='M-Dominic-Getters-GetFirst-ByAspAction-System-String-'></a>
-### ByAspAction(aspAction) `method`
+### ByAspAction() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspAction | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ByAspController-System-String-'></a>
-### ByAspController(aspController) `method`
+### ByAspController() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspController | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ByAspFor-System-String-'></a>
-### ByAspFor(aspFor) `method`
+### ByAspFor() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspFor | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ById-System-String-'></a>
-### ById(id) `method`
+### ById() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ByPartialName-System-String-'></a>
-### ByPartialName(partialName) `method`
+### ByPartialName() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ByTestId-System-String-'></a>
-### ByTestId(testId) `method`
+### ByTestId() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| testId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetFirst-ByType-System-String-'></a>
-### ByType(type) `method`
+### ByType() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='T-Dominic-Getters-GetLast'></a>
 ## GetLast `type`
@@ -427,141 +469,81 @@ Dominic.Getters
 Dominic.Getters
 
 <a name='M-Dominic-Getters-GetLast-ByAspAction-System-String-'></a>
-### ByAspAction(aspAction) `method`
+### ByAspAction() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspAction | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ByAspController-System-String-'></a>
-### ByAspController(aspController) `method`
+### ByAspController() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspController | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ByAspFor-System-String-'></a>
-### ByAspFor(aspFor) `method`
+### ByAspFor() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspFor | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.NotImplementedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.NotImplementedException 'System.NotImplementedException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ById-System-String-'></a>
-### ById(id) `method`
+### ById() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ByPartialName-System-String-'></a>
-### ByPartialName(partialName) `method`
+### ByPartialName() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ByTestId-System-String-'></a>
-### ByTestId(testId) `method`
+### ByTestId() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| testId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetLast-ByType-System-String-'></a>
-### ByType(type) `method`
+### ByType() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+This method has no parameters.
 
 <a name='T-Dominic-Getters-GetOnly'></a>
 ## GetOnly `type`
@@ -571,165 +553,81 @@ Dominic.Getters
 Dominic.Getters
 
 <a name='M-Dominic-Getters-GetOnly-ByAspAction-System-String-'></a>
-### ByAspAction(aspAction) `method`
+### ByAspAction() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspAction | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ByAspController-System-String-'></a>
-### ByAspController(aspController) `method`
+### ByAspController() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspController | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ByAspFor-System-String-'></a>
-### ByAspFor(aspFor) `method`
+### ByAspFor() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| aspFor | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ById-System-String-'></a>
-### ById(id) `method`
+### ById() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ByPartialName-System-String-'></a>
-### ByPartialName(partialName) `method`
+### ByPartialName() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ByTestId-System-String-'></a>
-### ByTestId(testId) `method`
+### ByTestId() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| testId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='M-Dominic-Getters-GetOnly-ByType-System-String-'></a>
-### ByType(type) `method`
+### ByType() `method`
 
 ##### Summary
 
-
-
-##### Returns
-
-
+*Inherit from parent.*
 
 ##### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [Dominic.Exceptions.TooManyElementsFoundException](#T-Dominic-Exceptions-TooManyElementsFoundException 'Dominic.Exceptions.TooManyElementsFoundException') |  |
+This method has no parameters.
 
 <a name='T-Dominic-Getters-ISelectorMany'></a>
 ## ISelectorMany `type`
@@ -737,6 +635,10 @@ Dominic.Getters
 ##### Namespace
 
 Dominic.Getters
+
+##### Summary
+
+
 
 <a name='M-Dominic-Getters-ISelectorMany-ById-System-String-'></a>
 ### ById(id) `method`
@@ -794,13 +696,13 @@ Used to find all matching node in the rendered template where the `partial`'s `n
 
 ##### Returns
 
-
+A list of nodes in the template that have the supplied `partialName`
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| partialName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | `name` attribute value of the desired partial nodes |
 
 ##### Example
 
@@ -929,6 +831,10 @@ Returns
 ##### Namespace
 
 Dominic.Getters
+
+##### Summary
+
+
 
 <a name='M-Dominic-Getters-ISelectorSingle-ByAspAction-System-String-'></a>
 ### ByAspAction(aspAction) `method`
@@ -1101,6 +1007,32 @@ Dominic.Exceptions
 ##### Summary
 
 
+
+<a name='T-Dominic-Enums-PrintMarkup'></a>
+## PrintMarkup `type`
+
+##### Namespace
+
+Dominic.Enums
+
+##### Summary
+
+
+
+<a name='M-Dominic-Enums-PrintMarkup-WriteCouldNotFind-System-Xml-XmlDocument,Dominic-Enums-LookupType,System-String-'></a>
+### WriteCouldNotFind(markup,type,selector) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| markup | [System.Xml.XmlDocument](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.XmlDocument 'System.Xml.XmlDocument') |  |
+| type | [Dominic.Enums.LookupType](#T-Dominic-Enums-LookupType 'Dominic.Enums.LookupType') |  |
+| selector | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
 <a name='T-Dominic-Template'></a>
 ## Template `type`

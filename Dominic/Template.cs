@@ -46,7 +46,7 @@ namespace Dominic
             var lookup = new Lookup();
             lookup.BuildLookup(document);
 
-            GetOnly = new GetOnly(lookup);
+            GetOnly = new GetOnly(lookup, document);
             GetFirst = new GetFirst(lookup);
             GetLast = new GetLast(lookup);
             GetAll = new GetAll(lookup);
