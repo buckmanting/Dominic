@@ -15,7 +15,7 @@
         <FileVersion>1.0.0.0</FileVersion>
         <PackageTags>Testing, Razor, UI testing</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <Version>0.1.0-rc1</Version>
+        <Version>1.0.0-rc1</Version>
         <AssemblyName>Dominic</AssemblyName>
         <RootNamespace>Dominic</RootNamespace>
 
