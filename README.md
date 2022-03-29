@@ -55,6 +55,7 @@ Edit your `csproj` of the project containing your tests, and inside the `<ItemGr
 Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your `cshtml` partials. A requirement of RazorLight is that `PreserveCompilationContext` is set to `true` in your `csproj` of the project where it is used. Failing to configure this will result in an `Exception` being thrown, more details can be found in the [GitHub Issue](https://github.com/toddams/RazorLight/issues/127). See below for an example of how to configure your `csproj`.
 
 ```XML
+// My.Test.csproj
 <PropertyGroup>
     ...
     <PreserveCompilationContext>true</PreserveCompilationContext>
@@ -65,6 +66,7 @@ Dominic uses [RazorLight](https://github.com/toddams/RazorLight) to render your 
 Within the project containing your view models, or any type used within you views, you must set `PreserveCompilationContext` and `PreserveCompilationReferences` to true in the `csproj`. 
 
 ```XML
+// My.WebProj.csproj
     <PropertyGroup>
         <PreserveCompilationContext>true</PreserveCompilationContext>
         <PreserveCompilationReferences>true</PreserveCompilationReferences>
